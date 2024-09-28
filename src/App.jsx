@@ -1,7 +1,12 @@
+import Header from "./components/Header";
+
 const App = () => {
   return (
     <>
-      <h1>test</h1>
+      <div className="overflow-hidden">
+        {/*header is fixed*/}
+        <Header />
+      </div>
     </>
   );
 };
