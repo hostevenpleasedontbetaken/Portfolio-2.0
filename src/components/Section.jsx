@@ -1,0 +1,36 @@
+import React from "react";
+import PropTypes from "prop-types";
+
+const Section = ({
+  id,
+  children,
+  className,
+  padding = "medium",
+  backgroundColor,
+  height = "h-auto",
+  width = "w-[80vw]]",
+}) => {
+  const paddingClasses = {
+    small: "p-2",
+    medium: "p-6",
+    large: "p-8",
+  };
+
+  return (
+    <section
+      id={id}
+      className={`mt-[5rem] border border-dark-5 rounded-3xl shadow-md mx-auto ${width} ${backgroundColor} ${paddingClasses[padding]} ${className}`}
+    >
+      {children}
+    </section>
+  );
+};
+
+Section.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  padding: PropTypes.oneOf(["small", "medium", "large"]),
+  backgroundColor: PropTypes.string,
+};
+
+export default Section;
