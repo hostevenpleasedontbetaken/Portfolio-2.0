@@ -11,7 +11,7 @@ const Typewriter = ({ text, onTypingComplete }) => {
       const timeout = setTimeout(() => {
         setDisplayText(displayText + text[index]);
         setIndex(index + 1);
-      }, 70); // Speed of typing effect
+      }, 50); // Speed of typing effect
       return () => clearTimeout(timeout);
     } else {
       setTypingDone(true); // Typing finished
@@ -22,7 +22,7 @@ const Typewriter = ({ text, onTypingComplete }) => {
   }, [index, text, displayText, onTypingComplete]);
 
   return (
-    <h3 className="text-[7rem] font-sans text-main-1">
+    <h3 className="text-[7rem] font-chakra text-main-1">
       {displayText}
       {/* Conditionally render the cursor */}
       {!typingDone && <span className="animate-cursor">|</span>}

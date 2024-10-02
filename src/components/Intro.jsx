@@ -15,21 +15,27 @@ const Intro = () => {
       padding="small"
       backgroundColor="bg-dark-4"
       width="w-[70vw]"
-      id="home
-      "
+      id="home"
     >
       <div className="border border-dark-1 rounded-3xl relative overflow-hidden">
-        <div className="flex items-center justify-center h-full w-full p-5">
+        <div className="flex items-center justify-center h-full w-full p-5 bg-radial-gradient">
           <div className="h-[80vh] w-[80vw] grid grid-cols-5 grid-rows-10 gap-4">
+            <div
+              className="absolute inset-0 z-0"
+              style={{
+                backgroundImage:
+                  "linear-gradient(0deg, transparent 0%, transparent 45%, rgba(0, 255, 0, 0.2) 50%, transparent 55%, transparent 100%)",
+                backgroundSize: "100% 20px",
+                animation: "moveStripes 1s linear infinite",
+              }}
+            ></div>
             <div className="col-span-4 row-span-1 border-b-4 border-b-main-1">
               <h1 className=" font-sans text-main-1 text-3xl text-shadow-green">
                 Display Developer Information
               </h1>
             </div>
             <div className="col-span-1 row-span-1 border-b-4 border-b-main-1">
-              <h1 className="font-sans text-main-1 text-2xl text-shadow-green">
-                ACC#21374
-              </h1>
+              <h1 className="font-sans text-main-1 text-2xl">ACC#21374</h1>
             </div>
             <div className="col-span-3 row-span-10 ">
               <Typewriter
@@ -39,9 +45,10 @@ const Intro = () => {
             </div>
 
             <div class="col-span-1 row-span-10"></div>
+            {/*Right Content */}
             <div class="col-span-1 row-span-10">
               <div
-                className={`grid grid-rows-6  flex-col items-center z-10 transition-transform delay-500 duration-700 ${
+                className={`grid grid-rows-6  flex-col z-10 items-centertransition-transform delay-500 duration-700 ${
                   typingComplete ? "translate-x-0" : "translate-x-[15rem]"
                 }`}
               >
@@ -76,15 +83,6 @@ const Intro = () => {
                 </div>
               </div>
             </div>
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage:
-                  "linear-gradient(0deg, transparent 0%, transparent 45%, rgba(0, 255, 0, 0.2) 50%, transparent 55%, transparent 100%)",
-                backgroundSize: "100% 20px",
-                animation: "moveStripes 1s linear infinite",
-              }}
-            ></div>
           </div>
 
           <style jsx>{`

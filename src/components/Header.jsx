@@ -15,6 +15,7 @@ const Header = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
+            console.log("Intersecting Section ID:", entry.target.id);
           }
         });
       },

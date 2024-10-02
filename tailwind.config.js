@@ -27,10 +27,13 @@ export default {
       },
       fontFamily: {
         sans: ["var(--font-robot)", ...fontFamily.sans],
+        chakra: ["Chakra Petch", "sans-serif"], // Add your font here
       },
       backgroundImage: {
         "radial-gradient":
           "radial-gradient(circle at 50% 0, rgba(0, 255, 0, 0.1), #0000);",
+        "linear-gradient":
+          "linear-gradient(to right, #0000 5%, #fffc 35%, #fff 50%, #fffc 65%, #0000 95%);",
       },
     },
   },
