@@ -41,14 +41,14 @@ const Header = () => {
       }`}
     >
       <div className="px-2 pt-2 pb-1 sm:pb-2 max-w-13x1">
-        <nav className="flex items-center justify-between mx-1 sm:mx-2 md:mx-3 lg:mx-4">
-          <div className="flex items-center gap-2 px-3 py-2 border rounded-3xl h-[50px]">
+        <nav className="flex items-center lg:justify-between mx-1 sm:mx-2 md:mx-3 lg:mx-4">
+          <div className="items-center gap-2 px-3 py-2 border rounded-3xl h-[50px] hidden lg:flex">
             <Theme />
           </div>
 
-          <div className="flex h-[50px] ml-20 ">
-            <div className="flex items-center lg:border rounded-3xl lg:p-3 backdrop-blur-md">
-              <ul className="hidden gap-5 text-base lg:flex lg:items-center text-white">
+          <div className="flex h-[50px] lg:ml-20 justify-center w-full">
+            <div className="flex items-center border rounded-3xl p-3 backdrop-blur-md">
+              <ul className=" gap-5 text-base flex lg:items-center text-white">
                 {navigation.map((item) => (
                   <li
                     key={item.id}
