@@ -28,6 +28,7 @@ export default {
       fontFamily: {
         sans: ["var(--font-robot)", ...fontFamily.sans],
         chakra: ["Chakra Petch", "sans-serif"], // Add your font here
+        qwitcher: ['"Qwitcher Grypen"', "sans-serif"],
       },
       backgroundImage: {
         "radial-gradient":

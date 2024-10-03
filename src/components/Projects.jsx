@@ -42,7 +42,7 @@ const Projects = () => {
                   </div>
                   <div className="absolute bottom-[0rem] transform translate-y-[3rem] xl:p-20 md:p-20 sm:p-5 xs:p-5 z-1 group-hover:translate-y-10 transition-all ease-in-out duration-50">
                     <img
-                      src="src/assets/progress.jpg"
+                      src="src/assets/trackify.png"
                       alt="Progress"
                       className="object-cover rounded-3xl xl:w-[50rem] xl:h-[28rem] md:w-[40rem] md:h-[22rem] sm:w-[30rem] sm:h-[18rem] xs:w-[20rem] xs:h-[12rem]"
                     />

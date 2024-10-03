@@ -7,8 +7,8 @@ const Section = ({
   className,
   padding = "medium",
   backgroundColor,
-  height,
-  width = "w-[80vw]]",
+  height = "h-auto",
+  width = "w-full lg:w-[80vw] xl:w-[70vw]",
 }) => {
   const paddingClasses = {
     small: "p-2",
