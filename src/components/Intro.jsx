@@ -55,7 +55,7 @@ const Intro = () => {
                 </div>
 
                 {/* Image */}
-                <div className="row-span-3 bg-white flex items-center">
+                <div className="row-span-3 flex items-center">
                   <img
                     src="src/assets/headshot.jpg"
                     className="w-full h-full object-cover rounded-3xl"
