@@ -60,8 +60,32 @@ export default {
             "0 0 5px rgba(0, 255, 0, 0.8), 0 0 10px rgba(0, 255, 0, 0.8), 0 0 15px rgba(0, 255, 0, 0.8)",
         },
       };
+      const scrollbarUtilities = {
+        ".scrollbar-thin": {
+          scrollbarWidth: "thin", // For Firefox
+          scrollbarColor: "#565656 #212121", // Thumb and track colors
+          borderRadius: "20px",
+        },
+        ".scrollbar-webkit": {
+          "&::-webkit-scrollbar": {
+            width: "8px", // Scrollbar width
+          },
+          "&::-webkit-scrollbar-track": {
+            background: "#212121", // Track color
+          },
+          "&::-webkit-scrollbar-thumb": {
+            background: "#565656", // Thumb color
+            borderRadius: "20px", // Rounded corners
+            border: "2px solid #212121", // Optional border
+          },
+          "&::-webkit-scrollbar-thumb:hover": {
+            background: "#404040", // Darker thumb color on hover
+          },
+        },
+      };
 
       addUtilities(textShadowUtilities, ["responsive", "hover"]);
+      addUtilities(scrollbarUtilities, ["responsive", "hover"]);
     }),
   ],
 };

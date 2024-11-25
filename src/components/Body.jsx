@@ -14,13 +14,11 @@ const Body = () => {
         <div className="absolute top-0 left-0 w-full h-[0.1rem] bg-gradient-to-r from-transparent via-white to-transparent" />
 
         {/* Scrollable Section */}
-        <div className="border border-dark-1 rounded-t-2xl relative bg-radial-gradient-white-weak h-full  overflow-y-auto">
+        <div className="border border-dark-1  rounded-t-2xl relative bg-radial-gradient-white-weak h-full  overflow-y-auto scrollbar-thin scrollbar-webkit ">
           <div className="sticky top-0 z-10">
             <Navigation />
           </div>
-          <div className="w-full h-full ">
-            <Projects />
-          </div>
+          <div className="w-full h-full ">{/* Content goes here */}</div>
         </div>
       </div>
     </div>
