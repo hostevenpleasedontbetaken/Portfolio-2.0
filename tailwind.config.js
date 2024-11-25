@@ -24,6 +24,16 @@ export default {
           1: "#EEEEEE",
           2: "#E1E1E1",
         },
+        mac: {
+          1: "#9AA3A7",
+          2: "#565656",
+          3: "#3C3C3C",
+        },
+        dots: {
+          1: "#5FCD37",
+          2: "#E3DF61",
+          3: "#D56060",
+        },
       },
       fontFamily: {
         sans: ["var(--font-robot)", ...fontFamily.sans],
@@ -31,8 +41,12 @@ export default {
         qwitcher: ['"Qwitcher Grypen"', "sans-serif"],
       },
       backgroundImage: {
-        "radial-gradient":
+        "radial-gradient-green":
           "radial-gradient(circle at 50% 0, rgba(0, 255, 0, 0.1), #0000);",
+        "radial-gradient-white-strong":
+          "radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.5), #0000);",
+        "radial-gradient-white-weak":
+          "radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.1), #0000);",
         "linear-gradient":
           "linear-gradient(to right, #0000 5%, #fffc 35%, #fff 50%, #fffc 65%, #0000 95%);",
       },
