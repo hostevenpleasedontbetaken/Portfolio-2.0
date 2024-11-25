@@ -13,7 +13,7 @@ const Intro = () => {
   return (
     <Section padding="small" backgroundColor="bg-dark-4" id="home">
       <div className="border border-dark-1 rounded-3xl relative overflow-hidden">
-        <div className="flex items-center justify-center h-full w-full p-5 bg-radial-gradient">
+        <div className="flex items-center justify-center h-full w-full p-5 bg-radial-gradient-green">
           <div className="w-[80vw] lg:h-[80vh] grid grid-cols-5 grid-rows-10 gap-4">
             <div
               className="absolute inset-0 z-0"
@@ -25,7 +25,7 @@ const Intro = () => {
               }}
             ></div>
             <div className="col-span-4 row-span-1 border-b-4 border-b-main-1">
-              <h1 className=" font-sans  text-main-1 text-3xl text-shadow-green">
+              <h1 className=" font-sans  text-main-1 text-3xl ">
                 Display Developer Information
               </h1>
             </div>
@@ -55,7 +55,7 @@ const Intro = () => {
                 </div>
 
                 {/* Image */}
-                <div className="row-span-3 bg-white flex items-center">
+                <div className="row-span-3 flex items-center">
                   <img
                     src="src/assets/headshot.jpg"
                     className="w-full h-full object-cover rounded-3xl"
