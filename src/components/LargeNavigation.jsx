@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import HamburgerMenu from "./HamburgerMenu";
 import { contact, navigation } from "../constants";
 
-const Navigation = () => {
+const LargeNavigation = () => {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
@@ -185,4 +185,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default LargeNavigation;

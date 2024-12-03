@@ -61,7 +61,7 @@ const Techstack = () => {
                 width="1000"
                 height="1000"
                 class="size-8 "
-                src="/src/assets/logos/react-logo.svg"
+                src="/Portfolio-2.0/logos/react-logo.svg"
               />
             </div>
             <div>
@@ -77,7 +77,7 @@ const Techstack = () => {
                 width="1000"
                 height="1000"
                 class="size-8 "
-                src="/src/assets/logos/angular-logo.svg"
+                src="/Portfolio-2.0/logos/angular-logo.svg"
               />
             </div>
             <div>
@@ -93,7 +93,7 @@ const Techstack = () => {
                 width="1000"
                 height="1000"
                 class="size-8 "
-                src="/src/assets/logos/git-logo.svg"
+                src="/Portfolio-2.0/logos/git-logo.svg"
               />
             </div>
             <div>
@@ -107,7 +107,7 @@ const Techstack = () => {
                 width="1000"
                 height="1000"
                 class="size-8 "
-                src="/src/assets/logos/tailwind-logo.svg"
+                src="/Portfolio-2.0/logos/tailwind-logo.svg"
               />
             </div>
             <div>
@@ -121,7 +121,7 @@ const Techstack = () => {
                 width="1000"
                 height="1000"
                 class="size-8 "
-                src="/src/assets/logos/nodejs-logo.svg"
+                src="/Portfolio-2.0/logos/nodejs-logo.svg"
               />
             </div>
             <div>
@@ -137,7 +137,7 @@ const Techstack = () => {
                 width="1000"
                 height="1000"
                 class="size-8 "
-                src="/src/assets/logos/typescript-logo.svg"
+                src="/Portfolio-2.0/logos/typescript-logo.svg"
               />
             </div>
             <div>
@@ -153,7 +153,7 @@ const Techstack = () => {
                 width="1000"
                 height="1000"
                 class="size-8 "
-                src="/src/assets/logos/javascript-logo.svg"
+                src="/Portfolio-2.0/logos/javascript-logo.svg"
               />
             </div>
             <div>
@@ -170,7 +170,7 @@ const Techstack = () => {
                 width="1000"
                 height="1000"
                 class="size-8 "
-                src="/src/assets/logos/html-logo.svg"
+                src="/Portfolio-2.0/logos/html-logo.svg"
               />
             </div>
             <div>
@@ -184,7 +184,7 @@ const Techstack = () => {
                 width="1000"
                 height="1000"
                 class="size-8 "
-                src="/src/assets/logos/css-logo.svg"
+                src="/Portfolio-2.0/logos/css-logo.svg"
               />
             </div>
             <div>
@@ -200,7 +200,7 @@ const Techstack = () => {
                 width="1000"
                 height="1000"
                 class="size-8 "
-                src="/src/assets/logos/csharp-logo.svg"
+                src="/Portfolio-2.0/logos/csharp-logo.svg"
               />
             </div>
             <div>
@@ -216,7 +216,7 @@ const Techstack = () => {
                 width="1000"
                 height="1000"
                 class="size-8 "
-                src="/src/assets/logos/c++-logo.svg"
+                src="/Portfolio-2.0/logos/c++-logo.svg"
               />
             </div>
             <div>
@@ -232,7 +232,7 @@ const Techstack = () => {
                 width="1000"
                 height="1000"
                 class="size-8 "
-                src="/src/assets/logos/python-logo.svg"
+                src="/Portfolio-2.0/logos/python-logo.svg"
               />
             </div>
             <div>

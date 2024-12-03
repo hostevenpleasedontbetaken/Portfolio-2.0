@@ -191,7 +191,7 @@ const AboutMe = () => {
         </div>
         <div className="flex-col pt-[5.5rem] space-y-5">
           <div className="w-[20rem] h-[20rem] rounded-3xl border overflow-hidden items-center justify-center flex ml-6">
-            <img src="src/assets/headshot.jpg" />
+            <img src="/Portfolio-2.0/headshot.jpg" />
           </div>
           <div className="w-[25rem]">
             <p className="text-light-3">

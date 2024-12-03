@@ -3,6 +3,7 @@ import WebDevMain from "./pages/WebDevMain";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = () => {
+  console.log("test");
   return (
     <BrowserRouter basename="/Portfolio-2.0">
       {" "}

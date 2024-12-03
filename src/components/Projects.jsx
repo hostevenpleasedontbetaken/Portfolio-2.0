@@ -36,8 +36,7 @@ const Projects = () => {
                   <div className="px-10">
                     <img
                       className="w-[30rem] h-[18rem] rounded-xl"
-                      src="./src/assets/trackify.png"
-                      alt="Project 1"
+                      src="/Portfolio-2.0/trackify.png"
                     />
                   </div>
                 </div>
@@ -49,7 +48,6 @@ const Projects = () => {
                   <CardType>TypeScript</CardType>
                   <CardType>TailwindCSS</CardType>
                   <CardType>HTML</CardType>
-                  <CardType>Angular</CardType>
                 </div>
               </div>
             </ProjectCard>

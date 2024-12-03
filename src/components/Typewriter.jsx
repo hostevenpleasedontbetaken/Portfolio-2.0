@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Typewriter = ({ text, onTypingComplete }) => {
+const Typewriter = ({ text, onTypingComplete, className }) => {
   const [displayText, setDisplayText] = useState(""); // Text to be displayed
   const [index, setIndex] = useState(0); // Index to track typing
   const [typingDone, setTypingDone] = useState(false); // Tracks if typing is done
@@ -22,7 +22,7 @@ const Typewriter = ({ text, onTypingComplete }) => {
   }, [index, text, displayText, onTypingComplete]);
 
   return (
-    <h3 className="text-[4rem] uppercase font-mainfont text-main-1">
+    <h3 className={`uppercase font-mainfont text-main-1 ${className}`}>
       {displayText}
       {/* Conditionally render the cursor */}
       {!typingDone && <span className="animate-cursor">|</span>}
