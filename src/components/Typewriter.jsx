@@ -22,7 +22,7 @@ const Typewriter = ({ text, onTypingComplete }) => {
   }, [index, text, displayText, onTypingComplete]);
 
   return (
-    <h3 className="text-[7rem] font-chakra text-main-1">
+    <h3 className="text-[4rem] uppercase font-mainfont text-main-1">
       {displayText}
       {/* Conditionally render the cursor */}
       {!typingDone && <span className="animate-cursor">|</span>}

@@ -18,3 +18,10 @@
 .animate-rotate {
   animation: rotate 0.2s linear;
 }
+
+@font-face {
+  font-family: "main-font";
+  src: url("/assets/fonts/Dosis-ExtraLight.ttf") format("truetype");
+
+  font-style: normal;
+}

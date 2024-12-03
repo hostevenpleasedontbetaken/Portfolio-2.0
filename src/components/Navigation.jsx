@@ -34,7 +34,7 @@ const Navigation = () => {
   }, []);
 
   return (
-    <div className="bg-mac-2 w-full h-[6rem]  grid grid-rows-4 grids-col-6  rounded-t-xl">
+    <div className="bg-mac-2 w-full h-[6rem]  grid grid-rows-5 grids-col-6  rounded-t-xl border-b-mac-1 border-b-[0.1rem]">
       <div className="absolute top-0 left-0 w-full h-[0.1rem] bg-gradient-to-r from-transparent via-white to-transparent " />
       {/* Top Bar */}
       <div className=" row-span-2 items-center col-span-6 grid grid-cols-12 grid-rows-2 gap-x-1 p-2">
@@ -78,7 +78,7 @@ const Navigation = () => {
         {navigation.map((item) => (
           <div className="row-span-2 col-span-2" key={item.id}>
             <a
-              className="flex items-center gap-1 transition-all text-light-2 hover:bg-white hover:bg-opacity-10  ease-in-out duration-50"
+              className="flex items-center gap-1 transition-all text-white text-opacity-80 hover:bg-opacity-10  ease-in-out duration-50"
               href={`#${item.id}`} // Links to sections
             >
               <div
@@ -90,8 +90,8 @@ const Navigation = () => {
                   stroke="currentColor"
                   fill="currentColor"
                   viewBox="0 0 24 24"
-                  height="1em"
-                  width="1em"
+                  height="16"
+                  width="16"
                 >
                   {item.svgPaths.map((path, index) => (
                     <path key={index} d={path}></path>
@@ -105,8 +105,8 @@ const Navigation = () => {
       </div>
 
       {/* Middle Bar */}
-      <div className="row-span-1 col-span-6 h-full w-full rounded-2xl p-2 flex gap-x-4">
-        <div className="pl-4 flex gap-x-5 text-white">
+      <div className="row-span-1 col-span-6 h-full w-full  rounded-2xl p-2 flex items-center gap-x-4">
+        <div className="pl-4 flex gap-x-5 text-mac-1 items-center">
           <svg
             clip-rule="evenodd"
             fill-rule="evenodd"
@@ -157,7 +157,29 @@ const Navigation = () => {
         <div></div>
       </div>
       {/* Bottom Bar */}
-
+      <div className=" row-span-2  col-span-6 grid grid-cols-12 grid-rows-2 gap-x-2 pl-6 ">
+        {contact.map((item) => (
+          <div className="col-span-1 row-span-1 pt-2">
+            <a
+              key={item.link}
+              className="text-white text-opacity-80 gap-x-2 flex items-center  rounded-3xl hover:bg-white hover:bg-opacity-10 transition-colors ease-in-out duration-50"
+              href={item.link}
+              target={item.target}
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="text-main-1"
+              >
+                <path d={item.path} fill="currentColor"></path>
+              </svg>
+              {item.title}
+            </a>
+          </div>
+        ))}
+      </div>
       {/* Hamgerburger Menu */}
     </div>
   );
