@@ -9,9 +9,7 @@ export default {
       colors: {
         // Your existing color definitions
         main: {
-          1: "rgba(0, 255, 0, 0.6)",
-          2: "rgba(0, 255, 0, 0.1)",
-          3: "rgba(0, 255, 0, 1)",
+          1: "#43C2E8",
         },
         dark: {
           1: "#616161",
@@ -23,11 +21,13 @@ export default {
         light: {
           1: "#EEEEEE",
           2: "#E1E1E1",
+          3: "#C2BDB7",
         },
         mac: {
           1: "#9AA3A7",
-          2: "#565656",
+          2: "#424242",
           3: "#3C3C3C",
+          4: "#7F8587",
         },
         dots: {
           1: "#5FCD37",
@@ -39,6 +39,7 @@ export default {
         sans: ["var(--font-robot)", ...fontFamily.sans],
         chakra: ["Chakra Petch", "sans-serif"], // Add your font here
         qwitcher: ['"Qwitcher Grypen"', "sans-serif"],
+        mainfont: ["main-font", "sans-serif"],
       },
       backgroundImage: {
         "radial-gradient-green":

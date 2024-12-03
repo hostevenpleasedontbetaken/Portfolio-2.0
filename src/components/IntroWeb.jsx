@@ -1,36 +1,83 @@
 import React, { useState, useEffect } from "react";
-import Section from "./Section";
+import { contact, navigation } from "../constants";
 import Typewriter from "./Typewriter";
+import Section from "./Section";
 
-const Intro = () => {
+const IntroWeb = () => {
   const [typingComplete, setTypingComplete] = useState(false);
+
+  const [nameSlide, setnameSlide] = useState(false);
+  const [locationSlide, setlocationSlide] = useState(false);
+
+  const [startTyping, setstartTyping] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setnameSlide(true); // Trigger the slide animation
+    }, 100); // Delay for 500ms
+
+    return () => clearTimeout(timer); // Cleanup if component unmounts
+  }, []);
 
   // Function to be called when typing is complete
   const handleTypingComplete = () => {
-    setTypingComplete(true);
+    const timer = setTimeout(() => {
+      setTypingComplete(true); // Trigger the slide animation
+    }, 100);
+  };
+
+  const updatestartTyping = () => {
+    setstartTyping(true);
   };
 
   return (
-    <Section padding="small" backgroundColor="bg-black" id="home">
-      <div className="absolute top-0 left-0 w-full h-[0.1rem] bg-gradient-to-r from-transparent via-white to-transparent " />
-      <div className="border border-dark-1 rounded-2xl relative overflow-hidden bg-radial-gradient-white-weak">
-        <div className="bg-mac-2 w-full h-[2.5rem] bg-radial-gradient-white-strong ">
-          <div className="absolute top-0 left-0 w-full h-[0.1rem] bg-gradient-to-r from-transparent via-white to-transparent" />
-          <div className="flex items-center gap-x-2 w-full h-full">
-            <div className="pl-4">
-              <svg viewBox="0 0 24 24" height="16" width="16">
-                <circle cx="11.998" cy="11.998" fill-rule="nonzero" r="9.998" />
-              </svg>
+    <Section padding="small" id="home">
+      <div className="h-full w-full flex-col ">
+        <div
+          className={`w-full mt-[10rem] flex items-center justify-center transition-all duration-500 ease-in-out ${
+            nameSlide ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+          }`}
+          onTransitionEnd={updatestartTyping}
+        >
+          <p className={"uppercase text-[2rem]  text-white  "}>Steven Ho</p>
+        </div>
+        {startTyping && (
+          <div className="w-full flex items-center justify-center">
+            <Typewriter
+              text="Front-End Developer"
+              onTypingComplete={handleTypingComplete}
+            />
+          </div>
+        )}
+        <div
+          className={`w-full flex items-center justify-center transition-all duration-500 ease-in-out ${
+            typingComplete
+              ? "translate-y-0 opacity-100"
+              : "translate-y-20 opacity-0"
+          }`}
+        >
+          <div>
+            <div>
+              <p className="uppercase text-[1rem]  text-white">
+                Based in Noblesville, Indiana
+              </p>
             </div>
-            <div className="">
-              <svg viewBox="0 0 24 24" height="16" width="16">
-                <circle cx="11.998" cy="11.998" fill-rule="nonzero" r="9.998" />
-              </svg>
-            </div>
-            <div className="">
-              <svg viewBox="0 0 24 24" height="16" width="16">
-                <circle cx="11.998" cy="11.998" fill-rule="nonzero" r="9.998" />
-              </svg>
+            <div className="flex gap-x-3">
+              {contact.map((item) => (
+                <div className="col-span-1 row-span-1 pt-2">
+                  <a
+                    key={item.link}
+                    className="text-white gap-x-2 flex items-center  rounded-3xl hover:bg-white hover:bg-opacity-10 transition-colors ease-in-out duration-50"
+                    href={item.link}
+                    target={item.target}
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d={item.path} fill="currentColor"></path>
+                    </svg>
+                    {item.title}
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -38,4 +85,5 @@ const Intro = () => {
     </Section>
   );
 };
-export default Intro;
+
+export default IntroWeb;

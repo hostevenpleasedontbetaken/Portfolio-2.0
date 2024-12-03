@@ -78,7 +78,7 @@ const Navigation = () => {
         {navigation.map((item) => (
           <div className="row-span-2 col-span-2" key={item.id}>
             <a
-              className="flex items-center gap-1 transition-all text-light-2 hover:bg-opacity-10  ease-in-out duration-50"
+              className="flex items-center gap-1 transition-all text-white text-opacity-80 hover:bg-opacity-10  ease-in-out duration-50"
               href={`#${item.id}`} // Links to sections
             >
               <div
@@ -90,8 +90,8 @@ const Navigation = () => {
                   stroke="currentColor"
                   fill="currentColor"
                   viewBox="0 0 24 24"
-                  height="1em"
-                  width="1em"
+                  height="16"
+                  width="16"
                 >
                   {item.svgPaths.map((path, index) => (
                     <path key={index} d={path}></path>
@@ -106,7 +106,7 @@ const Navigation = () => {
 
       {/* Middle Bar */}
       <div className="row-span-1 col-span-6 h-full w-full  rounded-2xl p-2 flex items-center gap-x-4">
-        <div className="pl-4 flex gap-x-5 text-white items-center">
+        <div className="pl-4 flex gap-x-5 text-mac-1 items-center">
           <svg
             clip-rule="evenodd"
             fill-rule="evenodd"
@@ -162,11 +162,17 @@ const Navigation = () => {
           <div className="col-span-1 row-span-1 pt-2">
             <a
               key={item.link}
-              className="text-white gap-x-2 flex items-center  rounded-3xl hover:bg-white hover:bg-opacity-10 transition-colors ease-in-out duration-50"
+              className="text-white text-opacity-80 gap-x-2 flex items-center  rounded-3xl hover:bg-white hover:bg-opacity-10 transition-colors ease-in-out duration-50"
               href={item.link}
               target={item.target}
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="text-main-1"
+              >
                 <path d={item.path} fill="currentColor"></path>
               </svg>
               {item.title}
