@@ -26,7 +26,7 @@ const ProjectCard = ({ children, isVisible }) => {
 
   return (
     <div
-      className={`container row-span-1 col-span-1 h-[30rem] transition-all duration-1000 ease-in-out ${
+      className={`container row-span-1 col-span-1 md:h-[30rem] h-[25rem] transition-all duration-1000 ease-in-out ${
         isVisible
           ? "translate-y-0 opacity-100"
           : "translate-y-[10rem] opacity-0"

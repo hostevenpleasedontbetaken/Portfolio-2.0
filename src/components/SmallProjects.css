@@ -1,0 +1,15 @@
+/* Change the color of the next arrow */
+.swiper-button-next {
+  color: #ffffff; /* Replace with your desired color */
+}
+
+/* Change the color of the previous arrow */
+.swiper-button-prev {
+  color: #ffffff; /* Replace with your desired color */
+}
+
+/* Optional: Adjust the size of the arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  font-size: 1rem !important; /* Adjust the size as needed */
+}

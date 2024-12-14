@@ -17,7 +17,7 @@ const Body = () => {
         <div className="absolute top-0 left-0 w-full h-[0.1rem] bg-gradient-to-r from-transparent via-white to-transparent" />
 
         {/* Scrollable Section */}
-        <div className="border border-dark-1  rounded-t-2xl relative bg-radial-gradient-white-weak h-full  overflow-y-auto scrollbar-thin scrollbar-webkit ">
+        <div className="border border-dark-1 rounded-t-2xl relative bg-radial-gradient-white-weak h-full w-full overflow-y-auto scrollbar-thin scrollbar-webkit ">
           <div className="sticky top-0 z-10 hidden md:block">
             <LargeNavigation />
           </div>
@@ -27,6 +27,8 @@ const Body = () => {
 
           <IntroWeb />
           <Techstack />
+          <AboutMe />
+          <Projects />
 
           <div className="sticky bottom-0 left-0 right-0 z-10 md:hidden block">
             <SmallNavigationBot />

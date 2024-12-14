@@ -32,10 +32,10 @@ const IntroWeb = () => {
 
   return (
     <Section padding="small" id="home">
-      <div className="h-full w-full flex-col">
+      <div className="h-full max-w-full flex-col md:mt-[10rem] mt-[5rem] justify-center items-center">
         {/* Name Animation */}
         <div
-          className={`w-full mt-[10rem] flex items-center justify-center transition-all duration-500 ease-in-out ${
+          className={`w-full  flex items-center justify-center transition-all duration-500 ease-in-out ${
             nameSlide ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
           }`}
           onTransitionEnd={updatestartTyping}

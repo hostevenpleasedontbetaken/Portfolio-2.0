@@ -1,3 +1,17 @@
+import {
+  reactlogo,
+  angularlogo,
+  tailwindlogo,
+  typescriptlogo,
+  javascriptlogo,
+  htmllogo,
+  csslogo,
+  nodejslogo,
+  gitlogo,
+  cpluspluslogo,
+  csharplogo,
+  pythonlogo,
+} from "../assets";
 export const navigation = [
   {
     id: "home",
@@ -58,5 +72,161 @@ export const contact = [
     target: "_blank",
     link: "Portfolio-2.0/Steven_Ho_Resume.pdf",
     path: "M22 0h-20v24h14l6-6v-18zm-7 23h-12v-22h18v16h-6v6zm1-5h4.586l-4.586 4.586v-4.586zm-3 1h-8v1h8v-1zm0-3h-8v1h8v-1zm6-2v-1h-14v1h14zm0-4h-4v1h4v-1zm-6.006 1h-7.991l-.003-.789c-.003-.72-.006-1.615 1.314-1.92 1.483-.341 1.236-.418 1.158-.563-1.078-1.988-.71-3.173-.395-3.703.388-.651 1.089-1.025 1.923-1.025.827 0 1.523.368 1.91 1.011.545.904.409 2.222-.379 3.713-.105.196-.195.255 1.119.559 1.355.312 1.352 1.212 1.35 1.936l-.006.781zm-6.994-1h6c-.007-.547-.07-.626-.54-.734-.855-.198-1.629-.376-1.901-.972-.142-.311-.113-.66.087-1.039.61-1.151.758-2.146.407-2.729-.276-.458-.778-.526-1.053-.526-.48 0-.857.19-1.063.537-.352.59-.201 1.58.414 2.714.204.377.236.727.095 1.039-.269.598-1.036.774-1.847.962-.525.121-.593.202-.599.748zm13-2v-1h-4v1h4zm0-4h-4v1h4v-1z",
+  },
+];
+
+export const techstacklogos = [
+  {
+    id: "0",
+    name: "React",
+    color: "#0485A9",
+    logo: reactlogo,
+    description: "JavaScript Library",
+  },
+  {
+    id: "1",
+    name: "Angular",
+    color: "#751E20",
+    logo: angularlogo,
+    description: "Frontend Framework",
+  },
+  {
+    id: "2",
+    name: "Tailwind",
+    color: "#035B6A",
+    logo: tailwindlogo,
+    description: "CSS Framework",
+  },
+  {
+    id: "3",
+    name: "TypeScript",
+    color: "#005792",
+    logo: typescriptlogo,
+    description: "Typed JavaScript",
+  },
+  {
+    id: "4",
+    name: "JavaScript",
+    color: "#D3B912",
+    logo: javascriptlogo,
+    description: "Scripting Language",
+  },
+  {
+    id: "5",
+    name: "HTML",
+    color: "#A83516",
+    logo: htmllogo,
+    description: "Markup Language",
+  },
+  {
+    id: "6",
+    name: "CSS",
+    color: "#104F73",
+    logo: csslogo,
+    description: "Styling Language",
+  },
+  {
+    id: "7",
+    name: "Node.js",
+    color: "#008A57",
+    logo: nodejslogo,
+    description: "JavaScript Runtime",
+  },
+  {
+    id: "8",
+    name: "Git",
+    color: "#A92E1C",
+    logo: gitlogo,
+    description: "Version Control",
+  },
+  {
+    id: "9",
+    name: "C++",
+    color: "#345B80",
+    logo: cpluspluslogo,
+    description: "Programming Language",
+  },
+  {
+    id: "10",
+    name: "C#",
+    color: "#56289B",
+    logo: csharplogo,
+    description: "Programming Language",
+  },
+  {
+    id: "11",
+    name: "Python",
+    color: "#245176",
+    logo: pythonlogo,
+    description: "Programming Language",
+  },
+];
+
+export const work = [
+  {
+    id: "0",
+    time: "Apr 2024 - Present",
+    title: "Bechtel Innovation Design Center",
+    role: "Front Desk Administrator",
+  },
+  {
+    id: "1",
+    time: "Jun 2024 - Aug 2024",
+    title: "Youth Tech Inc.",
+    role: "Coding Instructor",
+  },
+  {
+    id: "2",
+    time: "May 2022 - Aug 2023",
+    title: "Conner Prairie",
+    role: "Summer Camp Counselor",
+  },
+  {
+    id: "3",
+    time: "May 2021 - Aug 2021",
+    title: "Paver Rescue",
+    role: "Patio Renovator",
+  },
+  {
+    id: "4",
+    time: "Nov 2019 - May 2021",
+    title: "Express",
+    role: "Sales Associate",
+  },
+  {
+    id: "5",
+    time: "Apr 2019 - Aug 2019",
+    title: "Panera Bread",
+    role: "Cashier",
+  },
+];
+
+export const education = [
+  {
+    id: "0",
+    time: "Aug 2021 - May 2025",
+    title: "Purdue University",
+    degree: "Bachelor of Web Programming & Design",
+  },
+  {
+    id: "1",
+    time: "Aug 2021 - May 2025",
+    title: "Purdue University",
+    degree: "Bachelor of Game Development",
+  },
+];
+
+export const projects = [
+  {
+    id: 0,
+    name: "Trackify",
+    image: "/Portfolio-2.0/trackify.png",
+    techStack: ["Angular", "TypeScript", "TailwindCSS", "HTML"],
+  },
+  {
+    id: 1,
+    name: "Trackify",
+    image: "/Portfolio-2.0/trackify.png",
+    techStack: ["Angular", "TypeScript", "TailwindCSS", "HTML"],
   },
 ];

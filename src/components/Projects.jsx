@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Section from "./Section";
-import ProjectCard from "./ProjectCard"; // Renamed component
-import CardType from "./CardType";
+
+import LargeProjects from "./LargeProjects";
+import SmallProjects from "./SmallProjects";
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,31 +27,14 @@ const Projects = () => {
 
   return (
     <Section padding="small" id="projects">
-      <div className="flex-col px-20 text-white space-y-4">
+      <div className="flex-col  text-white space-y-4 md:px-20 px-5  md:mt-0 mt-[5rem]">
         <div className="flex-col space-y-4">
-          <p className="text-[3rem] text-white">Projects</p>
-          <div className="grid grid-cols-2 gap-4">
-            <ProjectCard isVisible={isVisible}>
-              <div className="flex-col h-full w-full space-y-3 py-4">
-                <div className="flex justify-center">
-                  <div className="px-10">
-                    <img
-                      className="w-[30rem] h-[18rem] rounded-xl"
-                      src="/Portfolio-2.0/trackify.png"
-                    />
-                  </div>
-                </div>
-                <div className="px-10 text-[1.5rem]">
-                  <p>Trackify</p>
-                </div>
-                <div className="px-10 grid grid-cols-4 grid-rows-2 gap-2">
-                  <CardType>Angular</CardType>
-                  <CardType>TypeScript</CardType>
-                  <CardType>TailwindCSS</CardType>
-                  <CardType>HTML</CardType>
-                </div>
-              </div>
-            </ProjectCard>
+          <p className="md:text-[3rem] text-[2rem] text-white">Projects</p>
+          <div className="md:block hidden">
+            <LargeProjects />
+          </div>
+          <div className="block md:hidden">
+            <SmallProjects />
           </div>
         </div>
       </div>
