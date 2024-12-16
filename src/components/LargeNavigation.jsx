@@ -34,12 +34,12 @@ const LargeNavigation = () => {
   }, []);
 
   return (
-    <div className="bg-mac-2 w-full h-[6rem]  grid grid-rows-5 grids-col-6  rounded-t-xl border-b-mac-1 border-b-[0.1rem]">
+    <div className="bg-mac-2 w-full h-[6rem] grid grid-rows-5 grids-col-6  rounded-t-xl border-b-mac-1 border-b-[0.1rem]">
       <div className="absolute top-0 left-0 w-full h-[0.1rem] bg-gradient-to-r from-transparent via-white to-transparent " />
       {/* Top Bar */}
-      <div className=" row-span-2 items-center col-span-6 grid grid-cols-12 grid-rows-2 gap-x-1 p-2">
+      <div className=" row-span-2 items-center col-span-6 grid xl:grid-cols-12 md:grid-cols-14 grid-rows-2 gap-x-1 p-2">
         {/* Dots */}
-        <div className="flex items-center gap-x-2 w-full h-full row-span-2 col-span-1 ">
+        <div className="flex items-center gap-x-2 w-full h-full row-span-2 xl:col-span-1 md:col-span-2 ">
           <div className="pl-4 text-dots-3">
             <svg viewBox="0 0 24 24" height="16" width="16">
               <circle
@@ -76,7 +76,10 @@ const LargeNavigation = () => {
         </div>
 
         {navigation.map((item) => (
-          <div className="row-span-2 col-span-2" key={item.id}>
+          <div
+            className="row-span-2 xl:col-span-2 md:col-span-3 "
+            key={item.id}
+          >
             <a
               className="flex items-center gap-1 transition-all text-white text-opacity-80 hover:bg-opacity-10  ease-in-out duration-50"
               href={`#${item.id}`} // Links to sections
@@ -157,9 +160,9 @@ const LargeNavigation = () => {
         <div></div>
       </div>
       {/* Bottom Bar */}
-      <div className=" row-span-2  col-span-6 grid grid-cols-12 grid-rows-2 gap-x-2 pl-6 ">
+      <div className=" row-span-2 col-span-6 grid grid-cols-12 grid-rows-2 gap-x-2 pl-6 ">
         {contact.map((item) => (
-          <div className="col-span-1 row-span-1 pt-2">
+          <div className="xl:col-span-1 xl:row-span-2 md:col-span-2 pt-2">
             <a
               key={item.link}
               className="text-white text-opacity-80 gap-x-2 flex items-center  rounded-3xl hover:bg-white hover:bg-opacity-10 transition-colors ease-in-out duration-50"

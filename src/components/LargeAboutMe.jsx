@@ -11,13 +11,13 @@ const LargeAboutMe = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 space-x-[4rem]">
-      <div className="flex-col col-span-1 flex justify-center items-center text-left">
-        <div className="max-w-[40rem] min-w-[35rem]">
+    <div className="xl:space-x-[4rem] flex lg:w-[829.59px] xl:w-[1200px] justify-between">
+      <div className="flex-col text-left">
+        <div className="max-w-[40rem] lg:w-[35rem] md:w-[639.19px]">
           <p className="text-[3rem] text-white">About</p>
         </div>
-        <div className="flex justify-between items-center">
-          <div className="flex-col space-y-4 w-full max-w-[40rem] min-w-[35rem] min-h-[40rem] ">
+        <div className="flex  items-center">
+          <div className="flex-col space-y-4 w-full  lg:w-[30rem] min-h-[40rem] xl:w-[40rem] ">
             {/* Toggle Buttons */}
             <div className="rounded-lg h-9 bg-dark-4 ">
               <div className="grid grid-cols-2 grid-rows-1 p-1 gap-x-2 text-light-3">
@@ -110,9 +110,9 @@ const LargeAboutMe = () => {
           </div>
         </div>
       </div>
-      <div className="flex-col pt-[5.5rem] space-y-5 col-span-1 justify-center items-center flex ">
-        <div className="w-[20rem] h-[20rem] rounded-3xl border overflow-hidden items-center justify-center flex">
-          <img src="/Portfolio-2.0/headshot.jpg" />
+      <div className="flex-col lg:mt-[5rem] space-y-5 md:hidden lg:block justify-center flex items-center ">
+        <div className="rounded-3xl border overflow-hidden lg:w-[17rem] lg:h-[20rem] xl:w-[20rem] xl:h-[25rem] xl:ml-20">
+          <img src="/Portfolio-2.0/headshot.jpg" className="w-fill h-fill " />
         </div>
         <div className=" text-center">
           <p className="text-light-3">

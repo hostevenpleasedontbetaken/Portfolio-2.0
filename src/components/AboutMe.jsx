@@ -6,7 +6,7 @@ import SmallAboutMe from "./SmallAboutMe";
 const AboutMe = () => {
   return (
     <Section padding="small" id="aboutme">
-      <div className="w-full h-full md:px-20 px-5 mt-[-5rem] md:mt-0">
+      <div className="w-full h-full items-center flex justify-center ">
         <div className="md:block hidden">
           <LargeAboutMe />
         </div>

@@ -3,7 +3,7 @@ import { techstacklogos } from "../constants";
 
 const LoopTechStack = () => {
   return (
-    <div className=" h-64 overflow-hidden flex group">
+    <div className="overflow-hidden flex">
       <ul className=" flex gap-2 animate-loop-scroll ">
         {[...techstacklogos, ...techstacklogos].map((tech) => (
           <li

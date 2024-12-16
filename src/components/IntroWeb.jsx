@@ -32,7 +32,7 @@ const IntroWeb = () => {
 
   return (
     <Section padding="small" id="home">
-      <div className="h-screen max-w-full flex-col flex justify-center mt-[-6rem] items-center ">
+      <div className="h-screen max-w-full flex-col flex justify-center mt-[-16rem] mb-[-10rem] items-center ">
         {/* Name Animation */}
         <div
           className={`w-full  flex items-center justify-center transition-all duration-500 ease-in-out ${
@@ -51,7 +51,7 @@ const IntroWeb = () => {
             {/* Large Screens: Full Text */}
             <div className="hidden md:block">
               <Typewriter
-                className="text-[4rem]"
+                className="text-[3rem]"
                 text="Front-End Developer"
                 onTypingComplete={handleTypingComplete}
               />
@@ -65,13 +65,13 @@ const IntroWeb = () => {
             {/* Large Screens: Full Text */}
             <div className="block md:hidden flex-col">
               <Typewriter
-                className={"text-[2.5rem]"}
+                className={"text-[2rem]"}
                 text="Front-End"
                 onTypingComplete={handleTypingComplete}
               />
               {startSecondTyping && (
                 <Typewriter
-                  className={"text-[2.5rem]"}
+                  className={"text-[2rem]"}
                   text="Developer"
                   onTypingComplete={handleSecondTypingComplete}
                 />

@@ -11,12 +11,12 @@ const SmallAboutMe = () => {
   };
 
   return (
-    <div className="flex-col space-y-4 ">
+    <div className="flex-col space-y-4 px-5">
       <p className="text-[2rem] text-white">About</p>
       <div className="flex justify-between items-center">
         <div className="flex-col space-y-4">
           {/* Toggle Buttons */}
-          <div className="rounded-lg h-9 bg-dark-4 w-[17.5rem]">
+          <div className="rounded-lg h-9 bg-dark-4 w-full">
             <div className="grid grid-cols-2 grid-rows-1 p-1 gap-x-2 text-light-3">
               {/* First Button */}
               <button

@@ -27,8 +27,8 @@ const Projects = () => {
 
   return (
     <Section padding="small" id="projects">
-      <div className="flex-col  text-white space-y-4 md:px-20 px-5  md:mt-0 mt-[5rem]">
-        <div className="flex-col space-y-4">
+      <div className="flex-col w-full text-white space-y-4 px-5 md:mt-0 mt-[5rem] pb-[5rem] flex justify-center items-center">
+        <div className="flex-col space-y-4 lg:w-[829.59px] xl:w-[1200px] ">
           <p className="md:text-[3rem] text-[2rem] text-white">Projects</p>
           <div className="md:block hidden">
             <LargeProjects />

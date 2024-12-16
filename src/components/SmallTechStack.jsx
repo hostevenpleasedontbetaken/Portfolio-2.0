@@ -5,8 +5,9 @@ import LoopTechStack from "./LoopTechStack";
 
 const SmallTechStack = () => {
   return (
-    <div className="flex-col space-y-[-9rem]">
+    <div className="flex-col space-y-2 w-[290px] overflow-hidden ">
       <LoopTechStack />
+
       <SmallTechList />
     </div>
   );

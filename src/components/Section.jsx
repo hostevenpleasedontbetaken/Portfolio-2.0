@@ -7,8 +7,6 @@ const Section = ({
   className,
   padding = "medium",
   backgroundColor,
-  height = "h-[100vh]",
-  width = "w-[90vw]",
 }) => {
   const paddingClasses = {
     small: "p-2",
@@ -19,7 +17,7 @@ const Section = ({
   return (
     <section
       id={id}
-      className={`relative rounded-3xl w-full mx-auto ${height} ${width} ${backgroundColor} ${paddingClasses[padding]} ${className}`}
+      className={`relative rounded-3xl w-full mx-auto mt-[10rem]  ${backgroundColor} ${paddingClasses[padding]} ${className}`}
     >
       <div>{children}</div>
     </section>
