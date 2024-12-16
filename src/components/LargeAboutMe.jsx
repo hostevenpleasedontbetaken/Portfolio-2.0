@@ -11,13 +11,15 @@ const LargeAboutMe = () => {
   };
 
   return (
-    <div className="flex justify-between">
-      <div className="flex-col space-y-4 ">
-        <p className="text-[3rem] text-white">About</p>
+    <div className="grid grid-cols-2 space-x-[4rem]">
+      <div className="flex-col col-span-1 flex justify-center items-center text-left">
+        <div className="max-w-[40rem] min-w-[35rem]">
+          <p className="text-[3rem] text-white">About</p>
+        </div>
         <div className="flex justify-between items-center">
-          <div className="flex-col space-y-4">
+          <div className="flex-col space-y-4 w-full max-w-[40rem] min-w-[35rem] min-h-[40rem] ">
             {/* Toggle Buttons */}
-            <div className="rounded-lg h-9 bg-dark-4 w-[40rem]">
+            <div className="rounded-lg h-9 bg-dark-4 ">
               <div className="grid grid-cols-2 grid-rows-1 p-1 gap-x-2 text-light-3">
                 {/* First Button */}
                 <button
@@ -43,7 +45,7 @@ const LargeAboutMe = () => {
 
             {/* Animated Info Panel */}
             <div
-              className={`  w-[40rem] transition-all duration-500 transform ${
+              className={`w-full max-w-[40rem] transition-all duration-500 transform ${
                 activeButton === 0
                   ? "opacity-100 translate-x-0"
                   : "visibility-hidden opacity-0 -translate-x-10 "
@@ -75,7 +77,7 @@ const LargeAboutMe = () => {
             </div>
 
             <div
-              className={` w-[40rem] transition-all duration-500 transform ${
+              className={` w-full max-w-[40rem] transition-all duration-500 transform ${
                 activeButton === 1
                   ? "opacity-100 translate-x-0"
                   : "visibility-hidden opacity-0 translate-x-10"
@@ -108,11 +110,11 @@ const LargeAboutMe = () => {
           </div>
         </div>
       </div>
-      <div className="flex-col pt-[5.5rem] space-y-5">
-        <div className="w-[20rem] h-[20rem] rounded-3xl border overflow-hidden items-center justify-center flex ml-6">
+      <div className="flex-col pt-[5.5rem] space-y-5 col-span-1 justify-center items-center flex ">
+        <div className="w-[20rem] h-[20rem] rounded-3xl border overflow-hidden items-center justify-center flex">
           <img src="/Portfolio-2.0/headshot.jpg" />
         </div>
-        <div className="w-[25rem]">
+        <div className=" text-center">
           <p className="text-light-3">
             Hi, I'm <span className="text-main-1">Steven Ho.</span> I design
             user-friendly, visually engaging, and performance-driven web

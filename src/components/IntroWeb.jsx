@@ -40,7 +40,7 @@ const IntroWeb = () => {
           }`}
           onTransitionEnd={updatestartTyping}
         >
-          <p className="uppercase md:text-[2rem] text-[1rem] text-white">
+          <p className="uppercase md:text-[2rem] text-[1.5rem] text-white">
             Steven Ho
           </p>
         </div>
@@ -65,13 +65,13 @@ const IntroWeb = () => {
             {/* Large Screens: Full Text */}
             <div className="block md:hidden flex-col">
               <Typewriter
-                className={"text-[2rem]"}
+                className={"text-[2.5rem]"}
                 text="Front-End"
                 onTypingComplete={handleTypingComplete}
               />
               {startSecondTyping && (
                 <Typewriter
-                  className={"text-[2rem]"}
+                  className={"text-[2.5rem]"}
                   text="Developer"
                   onTypingComplete={handleSecondTypingComplete}
                 />
@@ -89,7 +89,7 @@ const IntroWeb = () => {
           }`}
         >
           <div className="flex-col items-center justify-center">
-            <p className="uppercase md:text-[1rem] text-[.5rem] text-white flex items-center justify-center">
+            <p className="uppercase md:text-[1rem] text-[.75rem] text-white flex items-center justify-center">
               Based in Noblesville, Indiana
             </p>
             <div className="flex gap-x-3">
@@ -109,7 +109,9 @@ const IntroWeb = () => {
                     >
                       <path d={item.path} fill="currentColor"></path>
                     </svg>
-                    <p className="md:text-[1rem] text-[.5rem] ">{item.title}</p>
+                    <p className="md:text-[1rem] text-[.75rem] ">
+                      {item.title}
+                    </p>
                   </a>
                 </div>
               ))}
