@@ -3,7 +3,7 @@ import CardType from "./CardType";
 import ProjectCard from "./ProjectCard";
 import { projects } from "../constants";
 
-const LargeProjects = (isVisible) => {
+const LargeProjects = ({ isVisible }) => {
   return (
     <div className="flex  md:items-center md:justify-center md:flex-col grid lg:grid-cols-2 w-full md:space-y-4 lg:space-y-0 xl:gap-4">
       {projects.map((project) => (

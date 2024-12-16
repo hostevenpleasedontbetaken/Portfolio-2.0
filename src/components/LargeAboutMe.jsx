@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { work, education } from "../constants";
 
-const LargeAboutMe = () => {
+const LargeAboutMe = ({ isVisible }) => {
   // State to track the active button; default is the first button (index 0)
   const [activeButton, setActiveButton] = useState(0);
 
@@ -12,7 +12,13 @@ const LargeAboutMe = () => {
 
   return (
     <div className="xl:space-x-[4rem] flex lg:w-[829.59px] xl:w-[1200px] justify-between">
-      <div className="flex-col text-left">
+      <div
+        className={`flex-col text-left transition-all duration-1000 ease-in-out ${
+          isVisible
+            ? "translate-x-0 opacity-100"
+            : "translate-x-[-5rem] opacity-0"
+        }  `}
+      >
         <div className="max-w-[40rem] lg:w-[35rem] md:w-[639.19px]">
           <p className="text-[3rem] text-white">About</p>
         </div>
@@ -110,7 +116,13 @@ const LargeAboutMe = () => {
           </div>
         </div>
       </div>
-      <div className="flex-col lg:mt-[5rem] space-y-5 md:hidden lg:block justify-center flex items-center ">
+      <div
+        className={`flex-col lg:mt-[5rem] space-y-5 md:hidden lg:block justify-center flex items-center transition-all duration-1000 ease-in-out ${
+          isVisible
+            ? "translate-x-0 opacity-100"
+            : "translate-x-[-5rem] opacity-0"
+        }  `}
+      >
         <div className="rounded-3xl border overflow-hidden lg:w-[17rem] lg:h-[20rem] xl:w-[20rem] xl:h-[25rem] xl:ml-20">
           <img src="/Portfolio-2.0/headshot.jpg" className="w-fill h-fill " />
         </div>

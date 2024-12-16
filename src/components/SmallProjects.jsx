@@ -14,7 +14,7 @@ import "swiper/css/navigation";
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
 
-const SmallProjects = (isVisible) => {
+const SmallProjects = ({ isVisible }) => {
   return (
     <div
       className={`container row-span-1 col-span-1 md:h-[30rem] h-[25rem] transition-all duration-1000 ease-in-out bg-dark-4 rounded-xl w-[280px] py-[20px] ${
