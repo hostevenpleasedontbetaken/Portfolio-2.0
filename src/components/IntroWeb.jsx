@@ -32,7 +32,7 @@ const IntroWeb = () => {
 
   return (
     <Section padding="small" id="home">
-      <div className="h-full max-w-full flex-col md:mt-[10rem] mt-[5rem] justify-center items-center">
+      <div className="h-screen max-w-full flex-col flex justify-center mt-[-6rem] items-center ">
         {/* Name Animation */}
         <div
           className={`w-full  flex items-center justify-center transition-all duration-500 ease-in-out ${
@@ -40,7 +40,9 @@ const IntroWeb = () => {
           }`}
           onTransitionEnd={updatestartTyping}
         >
-          <p className="uppercase text-[2rem] text-white">Steven Ho</p>
+          <p className="uppercase md:text-[2rem] text-[1rem] text-white">
+            Steven Ho
+          </p>
         </div>
 
         {/* Typing Animations */}
@@ -63,13 +65,13 @@ const IntroWeb = () => {
             {/* Large Screens: Full Text */}
             <div className="block md:hidden flex-col">
               <Typewriter
-                className={"text-[3rem]"}
+                className={"text-[2rem]"}
                 text="Front-End"
                 onTypingComplete={handleTypingComplete}
               />
               {startSecondTyping && (
                 <Typewriter
-                  className={"text-[3rem]"}
+                  className={"text-[2rem]"}
                   text="Developer"
                   onTypingComplete={handleSecondTypingComplete}
                 />
@@ -86,8 +88,8 @@ const IntroWeb = () => {
               : "translate-y-20 opacity-0"
           }`}
         >
-          <div>
-            <p className="uppercase text-[1rem] text-white">
+          <div className="flex-col items-center justify-center">
+            <p className="uppercase md:text-[1rem] text-[.5rem] text-white flex items-center justify-center">
               Based in Noblesville, Indiana
             </p>
             <div className="flex gap-x-3">
@@ -99,10 +101,15 @@ const IntroWeb = () => {
                     target={item.target}
                     rel="noopener noreferrer"
                   >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <svg
+                      className="md:w-[18px] md:h-[18px] w-[12px] h-[12px]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
                       <path d={item.path} fill="currentColor"></path>
                     </svg>
-                    {item.title}
+                    <p className="md:text-[1rem] text-[.5rem] ">{item.title}</p>
                   </a>
                 </div>
               ))}
