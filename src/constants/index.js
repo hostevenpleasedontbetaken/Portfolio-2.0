@@ -221,12 +221,14 @@ export const projects = [
     id: 0,
     name: "Trackify",
     image: "/Portfolio-2.0/trackify.png",
+    desc: "Project / Issue Tracker",
     techStack: ["Angular", "TypeScript", "TailwindCSS", "HTML"],
   },
   {
     id: 1,
-    name: "Trackify",
-    image: "/Portfolio-2.0/trackify.png",
-    techStack: ["Angular", "TypeScript", "TailwindCSS", "HTML"],
+    name: "Personal Portfolio",
+    image: "/Portfolio-2.0/PersonalPortfolio.png",
+    desc: "My Personal Portfolio",
+    techStack: ["React", "JavaScript", "TailwindCSS", "Vite"],
   },
 ];
