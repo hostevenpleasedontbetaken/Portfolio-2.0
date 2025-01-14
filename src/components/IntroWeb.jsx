@@ -31,7 +31,7 @@ const IntroWeb = () => {
   };
 
   return (
-    <Section padding="small" id="home">
+    <Section padding="small" id="home" marginTop={"16rem"}>
       <div className="h-screen max-w-full flex-col flex justify-center mt-[-16rem] mb-[-10rem] items-center ">
         {/* Name Animation */}
         <div

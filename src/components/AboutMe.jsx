@@ -24,7 +24,7 @@ const AboutMe = () => {
     };
   }, []);
   return (
-    <Section padding="small" id="aboutme">
+    <Section padding="small" id="aboutme" marginTop={"10rem"}>
       <div className="w-full h-full items-center flex justify-center ">
         <div className="md:block hidden">
           <LargeAboutMe isVisible={isVisible} />

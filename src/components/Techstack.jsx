@@ -26,7 +26,7 @@ const Techstack = () => {
   }, []);
 
   return (
-    <Section padding="small" id="techstack">
+    <Section padding="small" id="techstack" marginTop={"10rem"}>
       <div className="flex-col flex justify-center items-center w-full  px-5 mt-[-10rem] md:mt-0 text-white space-y-4 ">
         <div className="lg:w-[829.59px] xl:w-[1200px]">
           <div

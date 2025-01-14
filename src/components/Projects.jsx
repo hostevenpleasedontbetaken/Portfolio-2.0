@@ -26,7 +26,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <Section padding="small" id="projects">
+    <Section padding="small" id="projects" marginTop={"10rem"}>
       <div className="flex-col w-full text-white space-y-4 px-5 md:mt-0 mt-[5rem] pb-[5rem] flex justify-center items-center">
         <div className="flex-col space-y-4 lg:w-[829.59px] xl:w-[1200px] ">
           <p
