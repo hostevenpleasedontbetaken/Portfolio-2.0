@@ -19,7 +19,7 @@ const Section = ({
   return (
     <section
       id={id}
-      className={`relative rounded-3xl w-full mx-auto ${height} ${width} ${backgroundColor} ${paddingClasses[padding]} ${className}`}
+      className={`scroll-mt-24 relative rounded-3xl w-full mx-auto ${height} ${width} ${backgroundColor} ${paddingClasses[padding]} ${className}`}
     >
       <div>{children}</div>
     </section>

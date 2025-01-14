@@ -32,7 +32,7 @@ const IntroWeb = () => {
 
   return (
     <Section padding="small" id="home">
-      <div className="h-screen max-w-full flex-col flex justify-center mt-[-6rem] items-center ">
+      <div className="h-screen max-w-full flex-col flex justify-center mt-[-6rem] items-center  ">
         {/* Name Animation */}
         <div
           className={`w-full  flex items-center justify-center transition-all duration-500 ease-in-out ${
