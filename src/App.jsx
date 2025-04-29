@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
-    <BrowserRouter basename="/Portfolio-2.0">
+    <BrowserRouter>
       {/* Replace with your repo name */}
       <Routes>
         <Route path="/" element={<WebDevMain />} />
