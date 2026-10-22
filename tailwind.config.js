@@ -5,16 +5,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      gridTemplateColumns: {
-        14: "repeat(14, minmax(0, 1fr))",
-      },
       animation: {
-        "loop-scroll": "loop-scroll 10s linear infinite",
+        cursor: "blink 1s steps(2, start) infinite",
       },
       keyframes: {
-        "loop-scroll": {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(calc(-50% - 4px))" },
+        blink: {
+          to: { visibility: "hidden" },
         },
       },
       colors: {
