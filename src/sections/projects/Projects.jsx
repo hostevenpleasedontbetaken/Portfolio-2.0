@@ -1,0 +1,35 @@
+import { useRevealOnce } from "../../hooks/useRevealOnce";
+import Section from "../../components/ui/Section";
+
+import LargeProjects from "./LargeProjects";
+import SmallProjects from "./SmallProjects";
+
+const Projects = () => {
+  const isVisible = useRevealOnce("projects");
+
+  return (
+    <Section padding="small" id="projects" marginTop={"10rem"}>
+      <div className="flex-col w-full text-white space-y-4 px-5 md:mt-0 mt-[5rem] pb-[5rem] flex justify-center items-center">
+        <div className="flex-col space-y-4 lg:w-[829.59px] xl:w-[1200px] ">
+          <p
+            className={`md:text-[3rem] text-[2rem] text-white transition-all duration-1000 ease-in-out ${
+              isVisible
+                ? "translate-x-0 opacity-100"
+                : "translate-x-[-5rem] opacity-0"
+            }`}
+          >
+            Projects
+          </p>
+          <div className="md:block hidden">
+            <LargeProjects isVisible={isVisible} />
+          </div>
+          <div className="block md:hidden">
+            <SmallProjects isVisible={isVisible} />
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+};
+
+export default Projects;

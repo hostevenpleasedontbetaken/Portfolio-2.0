@@ -1,18 +1,16 @@
-import React from "react";
-import WebDevMain from "./pages/WebDevMain";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import BrowserFrame from "./components/browser/BrowserFrame";
+import Hero from "./sections/hero/Hero";
+import TechStack from "./sections/techstack/TechStack";
+import AboutMe from "./sections/about/AboutMe";
+import Projects from "./sections/projects/Projects";
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      {/* Replace with your repo name */}
-      <Routes>
-        <Route path="/" element={<WebDevMain />} />
-        <Route path="/WebDeveloper/Main" element={<WebDevMain />} />
-        {/* <Route path="/GameDeveloper/Main" element={<GameDevMain />} /> */}
-      </Routes>
-    </BrowserRouter>
-  );
-};
+const App = () => (
+  <BrowserFrame>
+    <Hero />
+    <TechStack />
+    <AboutMe />
+    <Projects />
+  </BrowserFrame>
+);
 
 export default App;
