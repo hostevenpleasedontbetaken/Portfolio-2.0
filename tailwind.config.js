@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import { fontFamily } from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
 
 export default {
@@ -7,7 +6,7 @@ export default {
   theme: {
     extend: {
       gridTemplateColumns: {
-        14: "repeat(14, minmax(0, 1fr))", // Defines 14 columns
+        14: "repeat(14, minmax(0, 1fr))",
       },
       animation: {
         "loop-scroll": "loop-scroll 10s linear infinite",
@@ -19,7 +18,6 @@ export default {
         },
       },
       colors: {
-        // Your existing color definitions
         main: {
           1: "#43C2E8",
         },
@@ -48,31 +46,16 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["var(--font-robot)", ...fontFamily.sans],
-        chakra: ["Chakra Petch", "sans-serif"], // Add your font here
-        qwitcher: ['"Qwitcher Grypen"', "sans-serif"],
         mainfont: ["main-font", "sans-serif"],
       },
       backgroundImage: {
-        "radial-gradient-green":
-          "radial-gradient(circle at 50% 0, rgba(0, 255, 0, 0.1), #0000);",
-        "radial-gradient-white-strong":
-          "radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.5), #0000);",
         "radial-gradient-white-weak":
           "radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.1), #0000);",
-        "linear-gradient":
-          "linear-gradient(to right, #0000 5%, #fffc 35%, #fff 50%, #fffc 65%, #0000 95%);",
       },
     },
   },
   plugins: [
     plugin(function ({ addUtilities }) {
-      const textShadowUtilities = {
-        ".text-shadow-green": {
-          textShadow:
-            "0 0 5px rgba(0, 255, 0, 0.8), 0 0 10px rgba(0, 255, 0, 0.8), 0 0 15px rgba(0, 255, 0, 0.8)",
-        },
-      };
       const scrollbarUtilities = {
         ".scrollbar-thin": {
           scrollbarWidth: "thin", // For Firefox
@@ -97,7 +80,6 @@ export default {
         },
       };
 
-      addUtilities(textShadowUtilities, ["responsive", "hover"]);
       addUtilities(scrollbarUtilities, ["responsive", "hover"]);
     }),
   ],
