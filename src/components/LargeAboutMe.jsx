@@ -124,7 +124,7 @@ const LargeAboutMe = ({ isVisible }) => {
         }  `}
       >
         <div className="rounded-3xl border overflow-hidden lg:w-[17rem] lg:h-[20rem] xl:w-[20rem] xl:h-[25rem] xl:ml-20">
-          <img src="/Portfolio-2.0/headshot.jpg" className="w-fill h-fill " />
+          <img src="/headshot.jpg" className="w-fill h-fill " />
         </div>
         <div className=" text-center">
           <p className="text-light-3">
