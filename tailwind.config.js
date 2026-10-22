@@ -6,6 +6,18 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        14: "repeat(14, minmax(0, 1fr))", // Defines 14 columns
+      },
+      animation: {
+        "loop-scroll": "loop-scroll 10s linear infinite",
+      },
+      keyframes: {
+        "loop-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-50% - 4px))" },
+        },
+      },
       colors: {
         // Your existing color definitions
         main: {

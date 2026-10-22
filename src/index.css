@@ -15,13 +15,37 @@
   }
 }
 
+@layer utilities {
+  .paused {
+    animation-play-state: paused;
+  }
+  .mask-linear {
+    background: linear-gradient(
+      to right,
+      transparent,
+      #1a1816 20%,
+      #1a1816 80%,
+      transparent
+    );
+    mask-image: linear-gradient(to right, transparent, transparent);
+    mask-composite: exclude;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #1a1816 20%,
+      #1a1816 80%,
+      transparent
+    );
+  }
+}
+
 .animate-rotate {
   animation: rotate 0.2s linear;
 }
 
 @font-face {
   font-family: "main-font";
-  src: url("/assets/fonts/Dosis-ExtraLight.ttf") format("truetype");
+  src: url("./assets/fonts/Dosis-ExtraLight.ttf") format("truetype");
 
   font-style: normal;
 }

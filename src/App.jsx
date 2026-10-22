@@ -4,15 +4,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
-    <>
-      <div className="overflow-hidden">
-        {/*header is fixed*/}
-        <GameModeProvider>
-          <Header />
-          <Body />
-        </GameModeProvider>
-      </div>
-    </>
+    <BrowserRouter>
+      {/* Replace with your repo name */}
+      <Routes>
+        <Route path="/" element={<WebDevMain />} />
+        <Route path="/WebDeveloper/Main" element={<WebDevMain />} />
+        {/* <Route path="/GameDeveloper/Main" element={<GameDevMain />} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 };
 
