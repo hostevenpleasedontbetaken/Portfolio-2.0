@@ -29,7 +29,7 @@ const Hero = () => {
         </h1>
 
         <Typewriter
-          text="Front-End Developer"
+          text="Software Engineer"
           className="text-[2rem] md:text-[3rem]"
           delay={600}
           onTypingComplete={() => setTypingDone(true)}

@@ -7,7 +7,7 @@ import Timeline from "./Timeline";
 
 const tabs = [
   {
-    label: "Work",
+    label: "Experience",
     items: work.map((job) => ({ ...job, detail: job.role })),
   },
   {
@@ -61,11 +61,13 @@ const AboutMe = () => {
               />
             </div>
             <p className="text-center text-light-3">
-              Hi, I&apos;m <span className="text-main-1">Steven Ho.</span> I
-              design user-friendly, visually engaging, and performance-driven
-              web applications. My focus is on delivering seamless digital
-              experiences that combine creative design with technical innovation
-              to meet and exceed user expectations.
+              Hi, I&apos;m <span className="text-main-1">Steven Ho.</span> I&apos;m
+              a software engineer who builds data-heavy, design-system-driven
+              interfaces in React and TypeScript, and I&apos;m comfortable
+              across the stack: GraphQL and REST APIs, SQL, and native iOS in
+              Swift. At ReliaQuest I was promoted from associate to software
+              engineer in nine months and led a squad through four major
+              releases, all on time.
             </p>
           </Reveal>
         </div>

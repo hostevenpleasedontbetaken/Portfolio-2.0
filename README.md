@@ -29,8 +29,8 @@ src/
   data/                 all page content as plain data — edit text here
     links.js              LinkedIn / GitHub / Resume
     navigation.js         the tab bar entries
-    techStack.js          skills shown in "Current Technologies"
-    work.js, education.js about section timelines
+    skills.js             grouped skills (as on the resume)
+    work.js, education.js about-section timelines (with bullet highlights)
     projects.js           project cards
   components/
     browser/              the browser window: BrowserFrame (scroll area),

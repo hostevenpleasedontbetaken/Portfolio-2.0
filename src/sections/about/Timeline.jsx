@@ -1,7 +1,8 @@
 const isCurrent = (time) => /present/i.test(time);
 
-// A vertical timeline. Each item: { id, time, title, detail }.
-// Items whose time says "Present" get a filled marker.
+// A vertical timeline. Each item: { id, time, title, detail, highlights? }
+// where highlights is [{ label, text }]. Items whose time says "Present" get
+// a filled marker.
 const Timeline = ({ items }) => (
   <div className="rounded-lg border border-dark-1/60 py-2 pr-4">
     <ol className="ml-6 border-l border-mac-4">
@@ -20,6 +21,17 @@ const Timeline = ({ items }) => (
             </h3>
             <p className="text-sm">{item.detail}</p>
           </div>
+
+          {item.highlights?.length > 0 && (
+            <ul className="mt-3 space-y-2 text-sm text-light-3">
+              {item.highlights.map((highlight) => (
+                <li key={highlight.label}>
+                  <span className="text-white">{highlight.label}:</span>{" "}
+                  {highlight.text}
+                </li>
+              ))}
+            </ul>
+          )}
         </li>
       ))}
     </ol>
