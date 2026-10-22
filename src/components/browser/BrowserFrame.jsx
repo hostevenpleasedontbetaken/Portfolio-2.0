@@ -29,7 +29,7 @@ const BrowserFrame = ({ children }) => {
             <BrowserChrome nav={nav} />
           </div>
 
-          {children}
+          <main>{children}</main>
 
           <div className="sticky bottom-0 left-0 right-0 z-20 md:hidden">
             <MobileToolbar nav={nav} />

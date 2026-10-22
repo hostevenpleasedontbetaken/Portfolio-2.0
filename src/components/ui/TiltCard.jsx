@@ -29,7 +29,7 @@ const TiltCard = ({ children, className = "" }) => {
 
   return (
     <div
-      className="[perspective:1500px]"
+      className="h-full [perspective:1500px]"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >

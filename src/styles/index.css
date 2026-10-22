@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :focus-visible {
+    outline: 2px solid #43c2e8;
+    outline-offset: 2px;
+  }
+}
+
 @font-face {
   font-family: "main-font";
   src: url("../assets/fonts/Dosis-ExtraLight.ttf") format("truetype");

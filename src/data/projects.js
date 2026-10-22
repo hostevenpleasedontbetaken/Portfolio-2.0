@@ -15,5 +15,12 @@ export const projects = [
     image: portfolioImage,
     desc: "My Personal Portfolio",
     techStack: ["React", "JavaScript", "TailwindCSS", "Vite"],
+    links: [
+      { label: "Live site", url: "https://stevenho.live" },
+      {
+        label: "Source",
+        url: "https://github.com/hostevenpleasedontbetaken/Portfolio-2.0",
+      },
+    ],
   },
 ];

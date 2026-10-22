@@ -20,13 +20,13 @@ const Hero = () => {
       className="flex min-h-[calc(95vh-8rem)] items-center justify-center md:min-h-[calc(95vh-9rem)]"
     >
       <div className="flex w-full flex-col items-center text-center">
-        <p
+        <h1
           className={`uppercase text-[1.5rem] md:text-[2rem] text-white transition-all duration-500 ease-in-out motion-reduce:transition-none ${
             nameIn ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
           }`}
         >
           Steven Ho
-        </p>
+        </h1>
 
         <Typewriter
           text="Front-End Developer"

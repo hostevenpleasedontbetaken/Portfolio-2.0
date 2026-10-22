@@ -35,10 +35,8 @@ const Typewriter = ({
   }, [started, done, length, speed]);
 
   return (
-    <h3
-      aria-label={text}
-      className={`relative uppercase font-mainfont text-main-1 ${className}`}
-    >
+    <p className={`relative uppercase font-mainfont text-main-1 ${className}`}>
+      <span className="sr-only">{text}</span>
       <span aria-hidden="true" className="invisible">
         {text}
       </span>
@@ -46,7 +44,7 @@ const Typewriter = ({
         {text.slice(0, length)}
         {!done && started && <span className="animate-cursor">|</span>}
       </span>
-    </h3>
+    </p>
   );
 };
 
