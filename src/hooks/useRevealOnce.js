@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-// Becomes true the first time the element with the given id scrolls into view,
-// and stays true. Used to trigger one-shot entrance animations.
-export function useRevealOnce(id, threshold = 0.2) {
+// Returns [ref, isVisible]. isVisible becomes true the first time the element
+// the ref is attached to scrolls into view, and stays true. Used for one-shot
+// entrance animations.
+export function useRevealOnce(threshold = 0.2) {
+  const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const element = document.getElementById(id);
-    if (!element) return;
+    const element = ref.current;
+    if (!element || isVisible) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -18,7 +20,7 @@ export function useRevealOnce(id, threshold = 0.2) {
     observer.observe(element);
 
     return () => observer.disconnect();
-  }, [id, threshold]);
+  }, [threshold, isVisible]);
 
-  return isVisible;
+  return [ref, isVisible];
 }

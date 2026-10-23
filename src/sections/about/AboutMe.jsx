@@ -1,18 +1,72 @@
-import { useRevealOnce } from "../../hooks/useRevealOnce";
-import LargeAboutMe from "./LargeAboutMe";
+import { useState } from "react";
+import { education, profile, work } from "../../data";
+import headshot from "../../assets/images/headshot.jpg";
 import Section from "../../components/ui/Section";
-import SmallAboutMe from "./SmallAboutMe";
+import Reveal from "../../components/ui/Reveal";
+import Timeline from "./Timeline";
+
+const tabs = [
+  {
+    label: "Experience",
+    items: work.map((job) => ({ ...job, detail: job.role })),
+  },
+  {
+    label: "Education",
+    items: education.map((school) => ({ ...school, detail: school.degree })),
+  },
+];
 
 const AboutMe = () => {
-  const isVisible = useRevealOnce("aboutme");
+  const [activeTab, setActiveTab] = useState(0);
+
   return (
-    <Section padding="small" id="aboutme" marginTop={"10rem"}>
-      <div className="w-full h-full items-center flex justify-center ">
-        <div className="md:block hidden">
-          <LargeAboutMe isVisible={isVisible} />
-        </div>
-        <div className="md:hidden block items-center justify-center flex">
-          <SmallAboutMe isVisible={isVisible} />
+    <Section id="about">
+      <div className="mx-auto w-full max-w-[1200px]">
+        <Reveal>
+          <h2 className="mb-4 font-display text-[2rem] text-white md:text-[3rem]">
+            About
+          </h2>
+        </Reveal>
+
+        {/* Profile sits above the timeline on phones, beside it on large screens. */}
+        <div className="flex flex-col-reverse gap-10 lg:flex-row lg:justify-between lg:gap-16">
+          <Reveal className="w-full max-w-[40rem] space-y-4">
+            <div className="rounded-lg bg-dark-4 p-1">
+              <div className="grid grid-cols-2 gap-x-2 text-light-3">
+                {tabs.map((tab, index) => (
+                  <button
+                    key={tab.label}
+                    type="button"
+                    aria-pressed={activeTab === index}
+                    onClick={() => setActiveTab(index)}
+                    className={`h-7 rounded-lg ${
+                      activeTab === index ? "bg-dark-1" : "bg-dark-4"
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <Timeline items={tabs[activeTab].items} />
+          </Reveal>
+
+          <Reveal className="flex flex-col items-center space-y-5 lg:mt-4 lg:w-[20rem] lg:shrink-0">
+            <div className="h-[18rem] w-[14rem] overflow-hidden rounded-3xl border lg:h-[25rem] lg:w-[20rem]">
+              <img
+                src={headshot}
+                alt="Steven Ho"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
+            <p className="text-center leading-relaxed text-light-3">
+              Hi, I&apos;m <span className="text-main-1">{profile.name}.</span>{" "}
+              {profile.bio}
+            </p>
+          </Reveal>
         </div>
       </div>
     </Section>

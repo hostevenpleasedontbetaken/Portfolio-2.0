@@ -5,16 +5,17 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      gridTemplateColumns: {
-        14: "repeat(14, minmax(0, 1fr))",
-      },
       animation: {
-        "loop-scroll": "loop-scroll 10s linear infinite",
+        cursor: "blink 1s steps(2, start) infinite",
+        "loop-scroll": "loop-scroll 80s linear infinite",
       },
       keyframes: {
+        blink: {
+          to: { visibility: "hidden" },
+        },
         "loop-scroll": {
           from: { transform: "translateX(0)" },
-          to: { transform: "translateX(calc(-50% - 4px))" },
+          to: { transform: "translateX(-50%)" },
         },
       },
       colors: {
@@ -46,7 +47,9 @@ export default {
         },
       },
       fontFamily: {
-        mainfont: ["main-font", "sans-serif"],
+        // Thin and stylish: large headings only. Body text uses the default
+        // system UI font (SF Pro on macOS), like the browser chrome itself.
+        display: ["main-font", "sans-serif"],
       },
       backgroundImage: {
         "radial-gradient-white-weak":

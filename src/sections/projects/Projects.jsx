@@ -1,35 +1,26 @@
-import { useRevealOnce } from "../../hooks/useRevealOnce";
+import { projects } from "../../data";
 import Section from "../../components/ui/Section";
+import Reveal from "../../components/ui/Reveal";
+import ProjectCard from "./ProjectCard";
 
-import LargeProjects from "./LargeProjects";
-import SmallProjects from "./SmallProjects";
+const Projects = () => (
+  <Section id="projects" className="pb-24 md:min-h-[60vh]">
+    <div className="mx-auto w-full max-w-[1200px] space-y-4">
+      <Reveal>
+        <h2 className="font-display text-[2rem] text-white md:text-[3rem]">
+          Projects
+        </h2>
+      </Reveal>
 
-const Projects = () => {
-  const isVisible = useRevealOnce("projects");
-
-  return (
-    <Section padding="small" id="projects" marginTop={"10rem"}>
-      <div className="flex-col w-full text-white space-y-4 px-5 md:mt-0 mt-[5rem] pb-[5rem] flex justify-center items-center">
-        <div className="flex-col space-y-4 lg:w-[829.59px] xl:w-[1200px] ">
-          <p
-            className={`md:text-[3rem] text-[2rem] text-white transition-all duration-1000 ease-in-out ${
-              isVisible
-                ? "translate-x-0 opacity-100"
-                : "translate-x-[-5rem] opacity-0"
-            }`}
-          >
-            Projects
-          </p>
-          <div className="md:block hidden">
-            <LargeProjects isVisible={isVisible} />
-          </div>
-          <div className="block md:hidden">
-            <SmallProjects isVisible={isVisible} />
-          </div>
-        </div>
+      <div className="grid gap-6 lg:grid-cols-2">
+        {projects.map((project) => (
+          <Reveal key={project.id} from="up" className="h-full">
+            <ProjectCard project={project} />
+          </Reveal>
+        ))}
       </div>
-    </Section>
-  );
-};
+    </div>
+  </Section>
+);
 
 export default Projects;

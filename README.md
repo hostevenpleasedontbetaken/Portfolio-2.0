@@ -3,7 +3,16 @@
 Personal portfolio at **https://stevenho.live**, styled as a macOS Chrome window
 (tabs, address bar, bookmarks) with the page content shown inside it.
 
-Built with React 18, Vite and Tailwind CSS. Swiper powers the mobile project carousel.
+Built with React 18, Vite and Tailwind CSS.
+
+The page is one long scroll. The browser chrome is functional: tabs scroll to
+sections and push real history entries (`#about`), the address bar and URL
+follow the section in view (click it to copy the link), back/forward/reload
+work, and phones get a bottom toolbar with a menu.
+
+Each project opens as its own tab at `/projects/<slug>` with a case-study page
+(overview, screenshots, how it works, design decisions, build phases). The tab
+can be closed, and the home page stays mounted underneath.
 
 ## Scripts
 
@@ -22,23 +31,46 @@ src/
   main.jsx, App.jsx     entry point; App composes the browser frame + sections
   styles/               global CSS (Tailwind layers, local font)
   data/                 all page content as plain data — edit text here
-    links.js              LinkedIn / GitHub / Resume
+    profile.js            name, title, location, pitch, core tech, bio, optional email
+    links.js              LinkedIn / Resume (no GitHub profile link, on purpose)
     navigation.js         the tab bar entries
-    techStack.js          skills shown in "Current Technologies"
-    work.js, education.js about section timelines
-    projects.js           project cards
+    skills.js             grouped skills + the icons for the scrolling row
+    work.js, education.js about-section timelines (with bullet highlights)
+    projects.js           project cards (each has a `slug`)
+    caseStudies/          one file per project: the content of its page
+  pages/                  HomePage (the long scroll) and ProjectPage (the
+                          case-study template; blocks render only if the
+                          project has that content)
   components/
-    browser/              the fake browser window (frame, tabs, mobile bars)
-    ui/                   small shared pieces (Section, Tag, Typewriter)
-  sections/               one folder per page section
-    hero/ techstack/ about/ projects/
-  hooks/                useActiveSection, useRevealOnce (scroll helpers)
+    browser/              the browser window: BrowserFrame (scroll area),
+                          BrowserChrome = TabBar + Toolbar (address bar) +
+                          BookmarksBar on desktop, MobileToolbar on phones
+    ui/                   shared pieces: Section, Reveal, TiltCard, Tag,
+                          Typewriter, icons
+  sections/               one folder per page section, each a single
+    hero/ skills/         responsive component (no separate mobile versions)
+    about/ projects/ contact/
+  hooks/
+    useBrowserNav.js      history, active section and address for the chrome
+    useBrowserNavContext.js  lets sections (e.g. hero buttons) use the same nav
+    useRevealOnce.js      one-shot "scrolled into view" detection
   assets/               fonts, tech logos, images (imported, so Vite hashes them)
 public/                 files served as-is: CNAME, favicon, resume PDF
 ```
 
-Sections currently have separate `Large…` (desktop) and `Small…` (mobile)
-variants; both are rendered and one is hidden with CSS.
+Body text uses the system UI font (SF Pro on macOS); the thin Dosis font is
+used only for large headings (`font-display`). Set `email` in `data/profile.js`
+to show an "Email me" button on the Contact section.
+
+To add a project: add it to `data/projects.js` (with a new `slug`), add a file
+in `data/caseStudies/` and register it in that folder's `index.js`. The build
+(`vite.config.js`) reads the slugs and writes a copy of `index.html` for each
+`/projects/<slug>`, plus `404.html`, because GitHub Pages only serves static
+files.
+
+Section ids in `data/navigation.js` double as the URL hashes, and the chrome's
+height is mirrored in `BrowserFrame`'s `scroll-pt-*` classes so a section's top
+lands just below it. If you change the chrome height, change those too.
 
 ## Hosting
 

@@ -1,32 +1,50 @@
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const Typewriter = ({ text, onTypingComplete, className }) => {
-  const [displayText, setDisplayText] = useState(""); // Text to be displayed
-  const [index, setIndex] = useState(0); // Index to track typing
-  const [typingDone, setTypingDone] = useState(false); // Tracks if typing is done
+// Types `text` out one character at a time. The full text is rendered
+// invisibly underneath so the layout doesn't jump while typing.
+const Typewriter = ({
+  text,
+  className = "",
+  speed = 50,
+  delay = 0,
+  onTypingComplete,
+}) => {
+  const [started, setStarted] = useState(delay === 0);
+  const [length, setLength] = useState(0);
+  const done = length >= text.length;
 
-  // Typing effect logic
+  const onCompleteRef = useRef(onTypingComplete);
   useEffect(() => {
-    if (index < text.length) {
-      const timeout = setTimeout(() => {
-        setDisplayText(displayText + text[index]);
-        setIndex(index + 1);
-      }, 50); // Speed of typing effect
-      return () => clearTimeout(timeout);
-    } else {
-      setTypingDone(true); // Typing finished
-      if (onTypingComplete) {
-        onTypingComplete(); // Call the completion callback
-      }
+    onCompleteRef.current = onTypingComplete;
+  });
+
+  useEffect(() => {
+    if (started) return;
+    const timer = setTimeout(() => setStarted(true), delay);
+    return () => clearTimeout(timer);
+  }, [started, delay]);
+
+  useEffect(() => {
+    if (!started) return;
+    if (done) {
+      onCompleteRef.current?.();
+      return;
     }
-  }, [index, text, displayText, onTypingComplete]);
+    const timer = setTimeout(() => setLength((current) => current + 1), speed);
+    return () => clearTimeout(timer);
+  }, [started, done, length, speed]);
 
   return (
-    <h3 className={`uppercase font-mainfont text-main-1 ${className}`}>
-      {displayText}
-      {/* Conditionally render the cursor */}
-      {!typingDone && <span className="animate-cursor">|</span>}
-    </h3>
+    <p className={`relative uppercase font-display text-main-1 ${className}`}>
+      <span className="sr-only">{text}</span>
+      <span aria-hidden="true" className="invisible">
+        {text}
+      </span>
+      <span aria-hidden="true" className="absolute inset-0">
+        {text.slice(0, length)}
+        {!done && started && <span className="animate-cursor">|</span>}
+      </span>
+    </p>
   );
 };
 
