@@ -12,8 +12,8 @@ export const work = [
         text: "Led architecture and development of major features for a desktop-based platform application using React, TypeScript, and GraphQL APIs, from concept through production. Built data-heavy screens with tables, filters, and complex state.",
       },
       {
-        label: "Squad Lead & Releases",
-        text: "Took over as squad lead mid-project, owning in-flight work through release and partnering with the PM and associate engineers. Delivered 4 major platform releases, 100% on time, on timelines from 1 to 6 months.",
+        label: "Releases & Squad Lead",
+        text: "Delivered 4 major platform releases, 100% on time, on timelines from 1 to 6 months. For my last release I took over as squad lead mid-project, owning the in-flight work through release and partnering with the PM and associate engineers.",
       },
       {
         label: "AI-Native Workflow",
