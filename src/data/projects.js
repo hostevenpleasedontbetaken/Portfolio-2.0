@@ -18,6 +18,13 @@ export const projects = [
     image: trackifyImage,
     desc: "A responsive Angular dashboard and tracking interface with integrated UI components and performance optimization.",
     techStack: ["Angular", "TypeScript", "TailwindCSS", "HTML"],
+    links: [
+      { label: "Live demo", url: "https://trackify.setulp.com/dashboard" },
+      {
+        label: "Source",
+        url: "https://github.com/Trackify-Issue-Tracker/Trackify",
+      },
+    ],
   },
   {
     id: 2,

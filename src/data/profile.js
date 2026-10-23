@@ -5,7 +5,7 @@ export const profile = {
   location: "Noblesville, Indiana",
   // Optional. Set an address to show an "Email me" button on the Contact
   // section; leave empty to keep it off the page.
-  email: "",
+  email: "stevenyho@outlook.com",
   statement:
     "I build data-heavy, design-system-driven interfaces in React and TypeScript.",
   stats: [
