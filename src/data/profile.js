@@ -8,11 +8,8 @@ export const profile = {
   email: "stevenyho@outlook.com",
   statement:
     "I build data-heavy, design-system-driven interfaces in React and TypeScript.",
-  stats: [
-    { value: "4", label: "major platform releases delivered on time" },
-    { value: "9 mo", label: "from Associate to Software Engineer" },
-    { value: "8,000+", label: "lines of Swift in my iOS app" },
-  ],
+  // Shown as one line under the hero buttons.
+  coreTech: ["React", "TypeScript", "GraphQL", "Swift"],
   // Shown after "Hi, I'm <name>."
   bio: "I'm a software engineer who builds data-heavy, design-system-driven interfaces in React and TypeScript, and I'm comfortable across the stack: GraphQL and REST APIs, SQL, and native iOS in Swift. At ReliaQuest I was promoted from associate to software engineer in nine months, delivered four major platform releases on time, and took over as squad lead for my last release.",
 };

@@ -3,7 +3,6 @@ import { links, profile } from "../../data";
 import { useBrowserNavContext } from "../../hooks/useBrowserNavContext";
 import Section from "../../components/ui/Section";
 import Typewriter from "../../components/ui/Typewriter";
-import HighlightRotator from "./HighlightRotator";
 
 const resumeLink = links.find((link) => link.title === "Resume");
 
@@ -72,7 +71,21 @@ const Hero = () => {
             </a>
           </div>
 
-          <HighlightRotator items={profile.stats} />
+          <ul
+            aria-label="Core technologies"
+            className="flex flex-wrap items-center justify-center gap-x-2 text-xs tracking-wide text-light-3 sm:text-sm md:gap-x-3 md:text-base"
+          >
+            {profile.coreTech.map((tech, index) => (
+              <li key={tech} className="flex items-center gap-x-2 md:gap-x-3">
+                {index > 0 && (
+                  <span aria-hidden="true" className="text-main-1">
+                    ·
+                  </span>
+                )}
+                {tech}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </Section>

@@ -31,7 +31,7 @@ src/
   main.jsx, App.jsx     entry point; App composes the browser frame + sections
   styles/               global CSS (Tailwind layers, local font)
   data/                 all page content as plain data — edit text here
-    profile.js            name, title, location, pitch, stats, bio, optional email
+    profile.js            name, title, location, pitch, core tech, bio, optional email
     links.js              LinkedIn / Resume (no GitHub profile link, on purpose)
     navigation.js         the tab bar entries
     skills.js             grouped skills + the icons for the scrolling row
