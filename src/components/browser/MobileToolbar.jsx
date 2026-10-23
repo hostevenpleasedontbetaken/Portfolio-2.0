@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { links, navigation } from "../../data";
+import { links, navigation, projects } from "../../data";
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
@@ -84,13 +84,13 @@ const MobileToolbar = ({ nav }) => {
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                aria-current={nav.activeId === item.id ? "page" : undefined}
+                aria-current={nav.activeTab === item.id ? "page" : undefined}
                 onClick={(event) => {
                   event.preventDefault();
                   goTo(item.id);
                 }}
                 className={`flex items-center gap-x-3 rounded-lg px-3 py-2 ${
-                  nav.activeId === item.id
+                  nav.activeTab === item.id
                     ? "bg-white/10 text-main-1"
                     : "hover:bg-white/10"
                 }`}
@@ -100,6 +100,48 @@ const MobileToolbar = ({ nav }) => {
               </a>
             ))}
           </nav>
+
+          {nav.openProjects.length > 0 && (
+            <>
+              <div className="my-2 border-t border-mac-4" />
+              <p className="px-3 pb-1 text-xs uppercase tracking-wide text-mac-1">
+                Open tabs
+              </p>
+              {nav.openProjects.map((slug) => {
+                const project = projects.find((item) => item.slug === slug);
+                const isActive = nav.activeTab === `project:${slug}`;
+                return (
+                  <div key={slug} className="flex items-center">
+                    <a
+                      href={`/projects/${slug}`}
+                      aria-current={isActive ? "page" : undefined}
+                      onClick={(event) => {
+                        event.preventDefault();
+                        setIsOpen(false);
+                        nav.openProject(slug);
+                      }}
+                      className={`flex-1 rounded-lg px-3 py-2 ${
+                        isActive ? "bg-white/10 text-main-1" : "hover:bg-white/10"
+                      }`}
+                    >
+                      {project?.name ?? slug}
+                    </a>
+                    <button
+                      type="button"
+                      aria-label={`Close ${project?.name ?? slug} tab`}
+                      onClick={() => {
+                        setIsOpen(false);
+                        nav.closeProject(slug);
+                      }}
+                      className="inline-flex size-9 items-center justify-center rounded-full hover:bg-white/10"
+                    >
+                      <CloseIcon size={14} />
+                    </button>
+                  </div>
+                );
+              })}
+            </>
+          )}
 
           <div className="my-2 border-t border-mac-4" />
 

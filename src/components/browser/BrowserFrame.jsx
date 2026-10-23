@@ -1,11 +1,12 @@
 import { useEffect, useRef } from "react";
-import { navigation, profile } from "../../data";
+import { navigation, profile, projects } from "../../data";
 import { useBrowserNav } from "../../hooks/useBrowserNav";
 import { BrowserNavContext } from "../../hooks/useBrowserNavContext";
 import BrowserChrome from "./BrowserChrome";
 import MobileToolbar from "./MobileToolbar";
 
 const sectionIds = navigation.map((item) => item.id);
+const projectSlugs = projects.map((project) => project.slug);
 const baseTitle = `${profile.name} · ${profile.title}`;
 
 // The "browser window" that every section is rendered inside of. The sections
@@ -13,16 +14,15 @@ const baseTitle = `${profile.name} · ${profile.title}`;
 // the toolbar to the bottom).
 const BrowserFrame = ({ children }) => {
   const scrollRef = useRef(null);
-  const nav = useBrowserNav(sectionIds, scrollRef);
+  const nav = useBrowserNav(sectionIds, scrollRef, projectSlugs);
 
   // Like a real tab, the page title follows the section in view.
   useEffect(() => {
-    const tab = navigation.find((item) => item.id === nav.activeId);
-    document.title =
-      nav.activeId === nav.homeId || !tab
-        ? baseTitle
-        : `${tab.title} · ${profile.name}`;
-  }, [nav.activeId, nav.homeId]);
+    const project = projects.find((item) => item.slug === nav.projectSlug);
+    const section = navigation.find((item) => item.id === nav.activeId);
+    const name = project?.name ?? (nav.activeId === nav.homeId ? null : section?.title);
+    document.title = name ? `${name} · ${profile.name}` : baseTitle;
+  }, [nav.projectSlug, nav.activeId, nav.homeId]);
 
   return (
     <BrowserNavContext.Provider value={nav}>

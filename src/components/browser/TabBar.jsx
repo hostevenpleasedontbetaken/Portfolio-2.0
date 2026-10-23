@@ -1,4 +1,4 @@
-import { navigation } from "../../data";
+import { navigation, projects } from "../../data";
 import { CloseIcon, PathIcon } from "../ui/icons";
 
 const trafficLights = ["text-dots-3", "text-dots-2", "text-dots-1"];
@@ -15,10 +15,34 @@ const activeTab =
 const inactiveTab =
   "h-8 rounded-xl text-white/70 hover:bg-main-1/30 hover:text-white";
 
-// Desktop only: window buttons plus one "tab" per page section, modelled on
-// Chrome's tab strip. The close marks and "+" are visual only.
+const projectIcon = navigation.find((item) => item.id === "projects").svgPaths;
+
+// Lets the browser handle ctrl/cmd/shift clicks (open in a new tab/window).
+const isPlainClick = (event) =>
+  event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey;
+
+// Desktop only: window buttons, one tab per page section, and a tab for each
+// project that has been opened. Project tabs can be closed; the section tabs'
+// close marks and the "+" are visual only.
 const TabBar = ({ nav }) => {
-  const activeIndex = navigation.findIndex((item) => item.id === nav.activeId);
+  const tabs = [
+    ...navigation.map((item) => ({
+      key: item.id,
+      title: item.title,
+      paths: item.svgPaths,
+      href: item.id === nav.homeId ? "/" : `/#${item.id}`,
+      open: () => nav.goTo(item.id),
+    })),
+    ...nav.openProjects.map((slug) => ({
+      key: `project:${slug}`,
+      title: projects.find((project) => project.slug === slug)?.name ?? slug,
+      paths: projectIcon,
+      href: `/projects/${slug}`,
+      open: () => nav.openProject(slug),
+      close: () => nav.closeProject(slug),
+    })),
+  ];
+  const activeIndex = tabs.findIndex((tab) => tab.key === nav.activeTab);
 
   return (
     <div className="flex h-11 items-end rounded-t-xl bg-dark-3 px-3">
@@ -30,16 +54,16 @@ const TabBar = ({ nav }) => {
         ))}
       </div>
 
-      <nav aria-label="Sections" className="flex h-9 min-w-0 flex-1 items-center">
-        {navigation.map((item, index) => {
+      <nav aria-label="Tabs" className="flex h-9 min-w-0 flex-1 items-center">
+        {tabs.map((tab, index) => {
           const isActive = index === activeIndex;
           // No separator next to the active tab, like Chrome.
           const showSeparator = index > 0 && index !== activeIndex && index - 1 !== activeIndex;
 
           return (
             <div
-              key={item.id}
-              className={`flex h-full min-w-0 max-w-[16rem] flex-1 items-center ${
+              key={tab.key}
+              className={`relative flex h-full min-w-0 max-w-[16rem] flex-1 items-center ${
                 isActive ? "mx-2" : ""
               }`}
             >
@@ -50,23 +74,36 @@ const TabBar = ({ nav }) => {
                 />
               )}
               <a
-                href={`#${item.id}`}
+                href={tab.href}
                 aria-current={isActive ? "page" : undefined}
                 onClick={(event) => {
+                  if (!isPlainClick(event)) return;
                   event.preventDefault();
-                  nav.goTo(item.id);
+                  tab.open();
                 }}
-                className={`relative flex min-w-0 flex-1 items-center gap-x-2 px-3 text-sm transition-colors duration-150 ${
-                  isActive ? activeTab : inactiveTab
-                }`}
+                className={`relative flex min-w-0 flex-1 items-center gap-x-2 pl-3 text-sm transition-colors duration-150 ${
+                  tab.close ? "pr-8" : "pr-3"
+                } ${isActive ? activeTab : inactiveTab}`}
               >
-                <PathIcon paths={item.svgPaths} size={16} className="shrink-0" />
-                <span className="truncate">{item.title}</span>
-                <CloseIcon
-                  size={12}
-                  className="pointer-events-none ml-auto shrink-0 opacity-50"
-                />
+                <PathIcon paths={tab.paths} size={16} className="shrink-0" />
+                <span className="truncate">{tab.title}</span>
+                {!tab.close && (
+                  <CloseIcon
+                    size={12}
+                    className="pointer-events-none ml-auto shrink-0 opacity-50"
+                  />
+                )}
               </a>
+              {tab.close && (
+                <button
+                  type="button"
+                  aria-label={`Close ${tab.title} tab`}
+                  onClick={tab.close}
+                  className="absolute right-1.5 z-20 inline-flex size-5 items-center justify-center rounded-full text-white/60 transition-colors hover:bg-white/15 hover:text-white"
+                >
+                  <CloseIcon size={12} />
+                </button>
+              )}
             </div>
           );
         })}

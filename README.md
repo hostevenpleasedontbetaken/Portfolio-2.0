@@ -10,6 +10,10 @@ sections and push real history entries (`#about`), the address bar and URL
 follow the section in view (click it to copy the link), back/forward/reload
 work, and phones get a bottom toolbar with a menu.
 
+Each project opens as its own tab at `/projects/<slug>` with a case-study page
+(overview, screenshots, how it works, design decisions, build phases). The tab
+can be closed, and the home page stays mounted underneath.
+
 ## Scripts
 
 ```bash
@@ -32,7 +36,11 @@ src/
     navigation.js         the tab bar entries
     skills.js             grouped skills + the icons for the scrolling row
     work.js, education.js about-section timelines (with bullet highlights)
-    projects.js           project cards
+    projects.js           project cards (each has a `slug`)
+    caseStudies/          one file per project: the content of its page
+  pages/                  HomePage (the long scroll) and ProjectPage (the
+                          case-study template; blocks render only if the
+                          project has that content)
   components/
     browser/              the browser window: BrowserFrame (scroll area),
                           BrowserChrome = TabBar + Toolbar (address bar) +
@@ -53,6 +61,12 @@ public/                 files served as-is: CNAME, favicon, resume PDF
 Body text uses the system UI font (SF Pro on macOS); the thin Dosis font is
 used only for large headings (`font-display`). Set `email` in `data/profile.js`
 to show an "Email me" button on the Contact section.
+
+To add a project: add it to `data/projects.js` (with a new `slug`), add a file
+in `data/caseStudies/` and register it in that folder's `index.js`. The build
+(`vite.config.js`) reads the slugs and writes a copy of `index.html` for each
+`/projects/<slug>`, plus `404.html`, because GitHub Pages only serves static
+files.
 
 Section ids in `data/navigation.js` double as the URL hashes, and the chrome's
 height is mirrored in `BrowserFrame`'s `scroll-pt-*` classes so a section's top
