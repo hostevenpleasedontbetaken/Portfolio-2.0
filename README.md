@@ -28,7 +28,7 @@ src/
   styles/               global CSS (Tailwind layers, local font)
   data/                 all page content as plain data — edit text here
     profile.js            name, title, location, pitch, stats, bio, optional email
-    links.js              LinkedIn / GitHub / Resume
+    links.js              LinkedIn / Resume (no GitHub profile link, on purpose)
     navigation.js         the tab bar entries
     skills.js             grouped skills + the icons for the scrolling row
     work.js, education.js about-section timelines (with bullet highlights)

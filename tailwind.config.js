@@ -7,7 +7,7 @@ export default {
     extend: {
       animation: {
         cursor: "blink 1s steps(2, start) infinite",
-        "loop-scroll": "loop-scroll 40s linear infinite",
+        "loop-scroll": "loop-scroll 80s linear infinite",
       },
       keyframes: {
         blink: {

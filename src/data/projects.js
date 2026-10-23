@@ -26,12 +26,6 @@ export const projects = [
     image: portfolioImage,
     desc: "My portfolio, styled as a working browser window: tabs, history, and an address bar that follow the page.",
     techStack: ["React", "JavaScript", "TailwindCSS", "Vite"],
-    links: [
-      { label: "Live site", url: "https://stevenho.live" },
-      {
-        label: "Source",
-        url: "https://github.com/hostevenpleasedontbetaken/Portfolio-2.0",
-      },
-    ],
+    links: [{ label: "Live site", url: "https://stevenho.live" }],
   },
 ];
