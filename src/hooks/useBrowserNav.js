@@ -170,6 +170,15 @@ export function useBrowserNav(ids, scrollRef, projectSlugs = []) {
     return () => window.removeEventListener("popstate", onPopState);
   }, [ids, homeId, projectSlugs, showHome, scrollToSection]);
 
+  // A URL that is neither the home page nor a project (a mistyped or old link,
+  // or /index.html) already shows the home page, because the host serves the
+  // app for it. Tidy the address bar to match instead of leaving the bad path.
+  useEffect(() => {
+    const { pathname, hash } = window.location;
+    if (pathname === "/" || slugFromPath(pathname, projectSlugs)) return;
+    window.history.replaceState(window.history.state, "", `/${hash}`);
+  }, [projectSlugs]);
+
   // Landing on a URL like /#projects.
   useEffect(() => {
     if (slugFromPath(window.location.pathname, projectSlugs)) return;
