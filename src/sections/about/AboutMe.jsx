@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { education, work } from "../../data";
+import { education, profile, work } from "../../data";
 import headshot from "../../assets/images/headshot.jpg";
 import Section from "../../components/ui/Section";
 import Reveal from "../../components/ui/Reveal";
@@ -23,7 +23,9 @@ const AboutMe = () => {
     <Section id="about">
       <div className="mx-auto w-full max-w-[1200px]">
         <Reveal>
-          <h2 className="mb-4 text-[2rem] text-white md:text-[3rem]">About</h2>
+          <h2 className="mb-4 font-display text-[2rem] text-white md:text-[3rem]">
+            About
+          </h2>
         </Reveal>
 
         {/* Profile sits above the timeline on phones, beside it on large screens. */}
@@ -60,14 +62,9 @@ const AboutMe = () => {
                 className="h-full w-full object-cover object-top"
               />
             </div>
-            <p className="text-center text-light-3">
-              Hi, I&apos;m <span className="text-main-1">Steven Ho.</span> I&apos;m
-              a software engineer who builds data-heavy, design-system-driven
-              interfaces in React and TypeScript, and I&apos;m comfortable
-              across the stack: GraphQL and REST APIs, SQL, and native iOS in
-              Swift. At ReliaQuest I was promoted from associate to software
-              engineer in nine months and led a squad through four major
-              releases, all on time.
+            <p className="text-center leading-relaxed text-light-3">
+              Hi, I&apos;m <span className="text-main-1">{profile.name}.</span>{" "}
+              {profile.bio}
             </p>
           </Reveal>
         </div>

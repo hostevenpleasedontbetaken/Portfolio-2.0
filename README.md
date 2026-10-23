@@ -27,9 +27,10 @@ src/
   main.jsx, App.jsx     entry point; App composes the browser frame + sections
   styles/               global CSS (Tailwind layers, local font)
   data/                 all page content as plain data — edit text here
+    profile.js            name, title, location, pitch, stats, bio, optional email
     links.js              LinkedIn / GitHub / Resume
     navigation.js         the tab bar entries
-    skills.js             grouped skills (as on the resume)
+    skills.js             grouped skills + the icons for the scrolling row
     work.js, education.js about-section timelines (with bullet highlights)
     projects.js           project cards
   components/
@@ -39,14 +40,19 @@ src/
     ui/                   shared pieces: Section, Reveal, TiltCard, Tag,
                           Typewriter, icons
   sections/               one folder per page section, each a single
-    hero/ techstack/      responsive component (no separate mobile versions)
-    about/ projects/
+    hero/ skills/         responsive component (no separate mobile versions)
+    about/ projects/ contact/
   hooks/
     useBrowserNav.js      history, active section and address for the chrome
+    useBrowserNavContext.js  lets sections (e.g. hero buttons) use the same nav
     useRevealOnce.js      one-shot "scrolled into view" detection
   assets/               fonts, tech logos, images (imported, so Vite hashes them)
 public/                 files served as-is: CNAME, favicon, resume PDF
 ```
+
+Body text uses the system UI font (SF Pro on macOS); the thin Dosis font is
+used only for large headings (`font-display`). Set `email` in `data/profile.js`
+to show an "Email me" button on the Contact section.
 
 Section ids in `data/navigation.js` double as the URL hashes, and the chrome's
 height is mirrored in `BrowserFrame`'s `scroll-pt-*` classes so a section's top

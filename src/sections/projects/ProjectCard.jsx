@@ -23,7 +23,7 @@ const ProjectCard = ({ project }) => (
     )}
 
     <div>
-      <h3 className="text-[1.5rem]">{project.name}</h3>
+      <h3 className="font-display text-[1.75rem]">{project.name}</h3>
       {project.meta && <p className="text-sm text-mac-4">{project.meta}</p>}
     </div>
     <p>{project.desc}</p>

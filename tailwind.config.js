@@ -7,10 +7,15 @@ export default {
     extend: {
       animation: {
         cursor: "blink 1s steps(2, start) infinite",
+        "loop-scroll": "loop-scroll 40s linear infinite",
       },
       keyframes: {
         blink: {
           to: { visibility: "hidden" },
+        },
+        "loop-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
         },
       },
       colors: {
@@ -42,7 +47,9 @@ export default {
         },
       },
       fontFamily: {
-        mainfont: ["main-font", "sans-serif"],
+        // Thin and stylish: large headings only. Body text uses the default
+        // system UI font (SF Pro on macOS), like the browser chrome itself.
+        display: ["main-font", "sans-serif"],
       },
       backgroundImage: {
         "radial-gradient-white-weak":

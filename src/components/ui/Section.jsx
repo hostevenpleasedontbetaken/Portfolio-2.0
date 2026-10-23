@@ -3,7 +3,7 @@
 const Section = ({ id, children, className = "" }) => (
   <section
     id={id}
-    className={`relative w-full mx-auto px-5 py-16 md:py-24 ${className}`}
+    className={`relative w-full mx-auto px-5 py-12 md:py-16 ${className}`}
   >
     {children}
   </section>

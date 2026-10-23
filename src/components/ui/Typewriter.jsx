@@ -35,7 +35,7 @@ const Typewriter = ({
   }, [started, done, length, speed]);
 
   return (
-    <p className={`relative uppercase font-mainfont text-main-1 ${className}`}>
+    <p className={`relative uppercase font-display text-main-1 ${className}`}>
       <span className="sr-only">{text}</span>
       <span aria-hidden="true" className="invisible">
         {text}

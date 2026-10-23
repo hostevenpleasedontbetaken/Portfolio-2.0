@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import { links } from "../../data";
+import { links, profile } from "../../data";
+import { useBrowserNavContext } from "../../hooks/useBrowserNavContext";
 import Section from "../../components/ui/Section";
 import Typewriter from "../../components/ui/Typewriter";
-import { PathIcon } from "../../components/ui/icons";
+
+const resumeLink = links.find((link) => link.title === "Resume");
 
 const Hero = () => {
+  const nav = useBrowserNavContext();
   const [nameIn, setNameIn] = useState(false);
   const [typingDone, setTypingDone] = useState(false);
 
@@ -19,47 +22,67 @@ const Hero = () => {
       id="home"
       className="flex min-h-[calc(95vh-8rem)] items-center justify-center md:min-h-[calc(95vh-9rem)]"
     >
-      <div className="flex w-full flex-col items-center text-center">
+      <div className="flex w-full max-w-3xl flex-col items-center text-center">
         <h1
-          className={`uppercase text-[1.5rem] md:text-[2rem] text-white transition-all duration-500 ease-in-out motion-reduce:transition-none ${
+          className={`font-display uppercase text-[1.5rem] md:text-[2rem] text-white transition-all duration-500 ease-in-out motion-reduce:transition-none ${
             nameIn ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
           }`}
         >
-          Steven Ho
+          {profile.name}
         </h1>
 
         <Typewriter
-          text="Software Engineer"
+          text={profile.title}
           className="text-[2rem] md:text-[3rem]"
           delay={600}
           onTypingComplete={() => setTypingDone(true)}
         />
 
         <div
-          className={`flex flex-col items-center transition-all duration-500 ease-in-out motion-reduce:transition-none ${
+          className={`mt-2 flex flex-col items-center gap-y-5 transition-all duration-500 ease-in-out motion-reduce:transition-none ${
             typingDone ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
           }`}
         >
-          <p className="uppercase text-[.75rem] md:text-[1rem] text-white">
-            Based in Noblesville, Indiana
+          <p className="text-xs uppercase tracking-wide text-light-3 md:text-sm">
+            Based in {profile.location}
           </p>
-          <div className="flex gap-x-3">
-            {links.map((item) => (
-              <a
-                key={item.id}
-                href={item.link}
-                target={item.target}
-                rel="noopener noreferrer"
-                className="flex items-center gap-x-2 rounded-3xl pt-2 text-white transition-colors hover:bg-white/10"
-              >
-                <PathIcon
-                  paths={[item.path]}
-                  className="size-[12px] md:size-[18px]"
-                />
-                <span className="text-[.75rem] md:text-[1rem]">{item.title}</span>
-              </a>
-            ))}
+          <p className="max-w-xl text-base text-white md:text-lg">
+            {profile.statement}
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href={resumeLink.link}
+              target={resumeLink.target}
+              rel="noopener noreferrer"
+              className="rounded-full bg-main-1 px-5 py-2 text-sm font-medium text-dark-4 transition-colors hover:bg-white"
+            >
+              View resume
+            </a>
+            <a
+              href="#contact"
+              onClick={(event) => {
+                event.preventDefault();
+                nav.goTo("contact");
+              }}
+              className="rounded-full border border-main-1 px-5 py-2 text-sm font-medium text-main-1 transition-colors hover:bg-main-1/10"
+            >
+              Get in touch
+            </a>
           </div>
+
+          <ul className="mt-2 grid grid-cols-3 gap-4 md:gap-8">
+            {profile.stats.map((stat) => (
+              <li key={stat.label} className="flex flex-col items-center">
+                <span className="font-display text-[1.75rem] leading-none text-main-1 md:text-[2.25rem]">
+                  {stat.value}
+                </span>
+                <span className="mt-1 max-w-[9rem] text-xs text-light-3">
+                  {stat.label}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </Section>

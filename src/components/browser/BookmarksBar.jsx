@@ -3,7 +3,7 @@ import { PathIcon } from "../ui/icons";
 
 // Desktop only: external links shown like browser bookmarks.
 const BookmarksBar = () => (
-  <div className="flex h-8 items-center gap-x-1 px-3">
+  <div className="flex h-7 items-center gap-x-1 px-3">
     {links.map((item) => (
       <a
         key={item.id}

@@ -7,7 +7,9 @@ const Projects = () => (
   <Section id="projects" className="pb-24 md:min-h-[60vh]">
     <div className="mx-auto w-full max-w-[1200px] space-y-4">
       <Reveal>
-        <h2 className="text-[2rem] text-white md:text-[3rem]">Projects</h2>
+        <h2 className="font-display text-[2rem] text-white md:text-[3rem]">
+          Projects
+        </h2>
       </Reveal>
 
       <div className="grid gap-6 lg:grid-cols-2">

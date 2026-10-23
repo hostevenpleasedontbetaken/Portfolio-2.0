@@ -2,22 +2,29 @@ import { skills } from "../../data";
 import Section from "../../components/ui/Section";
 import Reveal from "../../components/ui/Reveal";
 import Tag from "../../components/ui/Tag";
+import IconMarquee from "./IconMarquee";
 
-const TechStack = () => (
-  <Section id="tech-stack" className="md:min-h-[60vh]">
+const Skills = () => (
+  <Section id="skills" className="md:min-h-[60vh]">
     <div className="mx-auto w-full max-w-[1200px] space-y-6 text-white">
       <div>
         <Reveal>
-          <h2 className="text-[2rem] md:text-[2.5rem] lg:text-[3rem]">Skills</h2>
+          <h2 className="font-display text-[2rem] md:text-[2.5rem] lg:text-[3rem]">
+            Skills
+          </h2>
         </Reveal>
         <Reveal>
-          <p className="max-w-3xl text-sm text-mac-4 min-[430px]:text-base">
+          <p className="max-w-3xl text-sm text-light-3 min-[430px]:text-base">
             My core is front-end architecture in React and TypeScript, backed by
             full-stack delivery (GraphQL, REST, SQL) and native iOS development
             in Swift.
           </p>
         </Reveal>
       </div>
+
+      <Reveal from="up">
+        <IconMarquee />
+      </Reveal>
 
       <div className="grid gap-4 md:grid-cols-2">
         {skills.map((group) => (
@@ -45,4 +52,4 @@ const TechStack = () => (
   </Section>
 );
 
-export default TechStack;
+export default Skills;
