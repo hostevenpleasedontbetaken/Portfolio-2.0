@@ -8,6 +8,13 @@ import {
   csslogo,
   gitlogo,
   pythonlogo,
+  swiftlogo,
+  graphqllogo,
+  postgresqllogo,
+  springbootlogo,
+  figmalogo,
+  jestlogo,
+  xcodelogo,
 } from "../assets/logos";
 
 // Icons for the scrolling row above the skill groups (only skills that have a
@@ -15,12 +22,19 @@ import {
 export const skillIcons = [
   { name: "React", color: "#0485A9", logo: reactlogo },
   { name: "TypeScript", color: "#005792", logo: typescriptlogo },
+  { name: "Swift", color: "#F05138", logo: swiftlogo },
   { name: "JavaScript", color: "#D3B912", logo: javascriptlogo },
+  { name: "GraphQL", color: "#E10098", logo: graphqllogo },
   { name: "Angular", color: "#751E20", logo: angularlogo },
+  { name: "PostgreSQL", color: "#4169E1", logo: postgresqllogo },
   { name: "Tailwind CSS", color: "#035B6A", logo: tailwindlogo },
+  { name: "Spring Boot", color: "#6DB33F", logo: springbootlogo },
   { name: "HTML", color: "#A83516", logo: htmllogo },
+  { name: "Figma", color: "#F24E1E", logo: figmalogo },
   { name: "CSS", color: "#104F73", logo: csslogo },
+  { name: "Jest", color: "#C21325", logo: jestlogo },
   { name: "Python", color: "#245176", logo: pythonlogo },
+  { name: "Xcode", color: "#147EFB", logo: xcodelogo },
   { name: "Git", color: "#A92E1C", logo: gitlogo },
 ];
 
