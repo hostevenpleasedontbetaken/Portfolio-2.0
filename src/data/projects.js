@@ -1,3 +1,4 @@
+import logAnalyzerImage from "../assets/projects/log-analyzer/overview.jpg";
 import commitImage from "../assets/projects/commit/today.jpg";
 import trackifyImage from "../assets/projects/trackify/dashboard.jpg";
 import portfolioImage from "../assets/projects/portfolio/skills.jpg";
@@ -9,6 +10,22 @@ import portfolioImage from "../assets/projects/portfolio/skills.jpg";
 export const projects = [
   {
     id: 0,
+    slug: "log-analyzer",
+    name: "TENEX Log Analyzer",
+    meta: "Full-stack security app · Solo developer · 2026",
+    image: logAnalyzerImage,
+    desc: "Upload web proxy logs and get a timeline, incidents ranked by confidence, and a plain-English reason for every flagged line, using rules, statistics and an Isolation Forest.",
+    techStack: ["React", "TypeScript", "Flask", "PostgreSQL", "scikit-learn"],
+    links: [
+      { label: "Live app (sign-in required)", url: "https://tenex-log-analyzer-f42ca.web.app" },
+      {
+        label: "Source",
+        url: "https://github.com/hostevenpleasedontbetaken/tenex-log-analyzer",
+      },
+    ],
+  },
+  {
+    id: 1,
     slug: "commit",
     name: "Commit",
     meta: "Native iOS app · Solo developer · 2026",
@@ -17,7 +34,7 @@ export const projects = [
     techStack: ["Swift", "SwiftUI", "SwiftData", "WidgetKit", "EventKit"],
   },
   {
-    id: 1,
+    id: 2,
     slug: "trackify",
     name: "Trackify",
     meta: "Issue tracker · Front-end developer · Team of two · 2024–2026",
@@ -33,7 +50,7 @@ export const projects = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     slug: "portfolio",
     name: "Personal Portfolio",
     meta: "This site · Personal project",
