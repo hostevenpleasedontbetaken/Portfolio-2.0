@@ -2,7 +2,8 @@
 
 ## Simple Icons 16.35.0 (CC0 1.0)
 
-`swift`, `graphql`, `postgresql`, `spring-boot`, `figma`, `jest` and `xcode`
+`swift`, `graphql`, `postgresql`, `spring-boot`, `figma`, `jest`, `xcode`,
+`flask`, `docker`, `firebase`, `google-cloud`, `scikit-learn` and `github-actions`
 come from [Simple Icons](https://simpleicons.org), release **16.35.0**
 (published 2026-10-11), fetched from the tagged source on GitHub:
 

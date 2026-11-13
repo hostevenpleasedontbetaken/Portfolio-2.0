@@ -16,8 +16,8 @@ const Skills = () => (
         <Reveal>
           <p className="max-w-3xl text-sm text-light-3 min-[430px]:text-base">
             My core is front-end architecture in React and TypeScript, backed by
-            full-stack delivery (GraphQL, REST, SQL) and native iOS development
-            in Swift.
+            full-stack delivery (GraphQL, REST, SQL, Python), cloud deployment
+            and native iOS development in Swift.
           </p>
         </Reveal>
       </div>

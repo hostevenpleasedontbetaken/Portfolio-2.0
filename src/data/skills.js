@@ -15,6 +15,12 @@ import {
   figmalogo,
   jestlogo,
   xcodelogo,
+  flasklogo,
+  dockerlogo,
+  firebaselogo,
+  googlecloudlogo,
+  scikitlearnlogo,
+  githubactionslogo,
 } from "../assets/logos";
 
 // Icons for the scrolling row above the skill groups (only skills that have a
@@ -36,6 +42,12 @@ export const skillIcons = [
   { name: "Python", color: "#245176", logo: pythonlogo },
   { name: "Xcode", color: "#147EFB", logo: xcodelogo },
   { name: "Git", color: "#A92E1C", logo: gitlogo },
+  { name: "Flask", color: "#3BABC3", logo: flasklogo },
+  { name: "Docker", color: "#2496ED", logo: dockerlogo },
+  { name: "Firebase", color: "#DD2C00", logo: firebaselogo },
+  { name: "Google Cloud", color: "#4285F4", logo: googlecloudlogo },
+  { name: "scikit-learn", color: "#F7931E", logo: scikitlearnlogo },
+  { name: "GitHub Actions", color: "#2088FF", logo: githubactionslogo },
 ];
 
 // Grouped as on the resume. Adding a skill is just adding a string.
@@ -52,6 +64,9 @@ export const skills = [
       "Tailwind CSS",
       "Angular",
       "Jest",
+      "Vitest",
+      "TanStack Query",
+      "Vite",
       "Design Systems",
       "Figma",
       "Frontend Architecture",
@@ -69,6 +84,31 @@ export const skills = [
       "SQL",
       "PostgreSQL",
       "Python",
+      "Flask",
+      "SQLAlchemy",
+    ],
+  },
+  {
+    id: "data-security",
+    title: "Data, Security & ML",
+    items: [
+      "Anomaly Detection",
+      "scikit-learn",
+      "pandas",
+      "Log Analysis",
+      "Authentication & Access Control",
+      "pytest",
+    ],
+  },
+  {
+    id: "cloud",
+    title: "Cloud & DevOps",
+    items: [
+      "Docker",
+      "Docker Compose",
+      "Google Cloud Run",
+      "Firebase (Auth, Hosting)",
+      "GitHub Actions (CI)",
     ],
   },
   {
