@@ -110,7 +110,7 @@ export const logAnalyzer = {
     },
     {
       title: "Security from the start",
-      body: "Every API route checks the sign-in token, and someone else's upload returns 404. Log text is only ever shown as plain text, under a Content Security Policy. Uploads are size-limited and safe against gzip bombs, and the git history was scanned for secrets before going public.",
+      body: "Every API route checks the sign-in token, and someone else's upload returns 404. \"Try the demo\" signs visitors in as read-only guests who can open one shared sample and nothing else. Because anyone can create an account, load is capped on the server: 3 uploads per person, a ceiling on total stored data, an upload rate limit, and uploads deleted after 7 days. Log text is only ever shown as plain text, under a Content Security Policy. Uploads are size-limited and safe against gzip bombs, and the git history was scanned for secrets before going public.",
     },
   ],
 
