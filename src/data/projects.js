@@ -17,7 +17,7 @@ export const projects = [
     desc: "Upload web proxy logs and get a timeline, incidents ranked by confidence, and a plain-English reason for every flagged line, using rules, statistics and an Isolation Forest.",
     techStack: ["React", "TypeScript", "Flask", "PostgreSQL", "scikit-learn"],
     links: [
-      { label: "Live app (sign-in required)", url: "https://proxy-log-analyzer.web.app" },
+      { label: "Live demo (no sign-up needed)", url: "https://proxy-log-analyzer.web.app" },
       {
         label: "Source",
         url: "https://github.com/hostevenpleasedontbetaken/proxy-log-analyzer",
