@@ -14,6 +14,12 @@ import springbootlogo from "./spring-boot-logo.svg";
 import figmalogo from "./figma-logo.svg";
 import jestlogo from "./jest-logo.svg";
 import xcodelogo from "./xcode-logo.svg";
+import flasklogo from "./flask-logo.svg";
+import dockerlogo from "./docker-logo.svg";
+import firebaselogo from "./firebase-logo.svg";
+import googlecloudlogo from "./google-cloud-logo.svg";
+import scikitlearnlogo from "./scikit-learn-logo.svg";
+import githubactionslogo from "./github-actions-logo.svg";
 
 export {
   reactlogo,
@@ -32,4 +38,10 @@ export {
   figmalogo,
   jestlogo,
   xcodelogo,
+  flasklogo,
+  dockerlogo,
+  firebaselogo,
+  googlecloudlogo,
+  scikitlearnlogo,
+  githubactionslogo,
 };
