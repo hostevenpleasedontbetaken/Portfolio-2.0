@@ -11,7 +11,7 @@ export const logAnalyzer = {
     "Upload a company's web proxy logs and get what a security analyst needs first: a timeline, incidents ranked by confidence, and a plain-English reason for every flagged line.",
 
   facts: [
-    { label: "Role", value: "Solo developer (a take-home assessment for TENEX)" },
+    { label: "Role", value: "Solo developer (built as a take-home assessment)" },
     { label: "Built", value: "October 31 to November 2, 2026, in 28 pull requests" },
     {
       label: "Front end",

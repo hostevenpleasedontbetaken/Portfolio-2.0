@@ -11,16 +11,16 @@ export const projects = [
   {
     id: 0,
     slug: "log-analyzer",
-    name: "TENEX Log Analyzer",
+    name: "Proxy Log Analyzer",
     meta: "Full-stack security app · Solo developer · 2026",
     image: logAnalyzerImage,
     desc: "Upload web proxy logs and get a timeline, incidents ranked by confidence, and a plain-English reason for every flagged line, using rules, statistics and an Isolation Forest.",
     techStack: ["React", "TypeScript", "Flask", "PostgreSQL", "scikit-learn"],
     links: [
-      { label: "Live app (sign-in required)", url: "https://tenex-log-analyzer-f42ca.web.app" },
+      { label: "Live app (sign-in required)", url: "https://proxy-log-analyzer.web.app" },
       {
         label: "Source",
-        url: "https://github.com/hostevenpleasedontbetaken/tenex-log-analyzer",
+        url: "https://github.com/hostevenpleasedontbetaken/proxy-log-analyzer",
       },
     ],
   },
