@@ -108,6 +108,7 @@ export const skills = [
       "Docker Compose",
       "Google Cloud Run",
       "Firebase (Auth, Hosting)",
+      "Neon (Postgres)",
       "GitHub Actions (CI)",
     ],
   },
