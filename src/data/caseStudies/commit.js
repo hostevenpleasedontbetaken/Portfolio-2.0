@@ -3,21 +3,21 @@ import form from "../../assets/projects/commit/form.jpg";
 import upcoming from "../../assets/projects/commit/upcoming.jpg";
 import calendar from "../../assets/projects/commit/calendar.jpg";
 import review from "../../assets/projects/commit/review.jpg";
-import repeating from "../../assets/projects/commit/repeating.jpg";
 import settings from "../../assets/projects/commit/settings.jpg";
 import widgetsHome from "../../assets/projects/commit/widgets-home.jpg";
 import widgetsLock from "../../assets/projects/commit/widgets-lock.jpg";
+import companion from "../../assets/projects/commit/companion.jpg";
 
 // Everything here comes from the project's own plan, CLAUDE.md and pull request
 // descriptions (the repository is private).
 export const commit = {
   slug: "commit",
   tagline:
-    "An iPhone app for keeping my word: a to-do list where the things I promised can't quietly slide to tomorrow.",
+    "An iPhone app for keeping my word: tasks that can't quietly slide to tomorrow, habits with no penalty, and XP that turns follow-through into a companion that grows.",
 
   facts: [
     { label: "Role", value: "Solo developer" },
-    { label: "Built", value: "October 2026, in 11 phases and 15 pull requests" },
+    { label: "Built", value: "October to November 2026, in 19 phases and 27 pull requests" },
     { label: "Platform", value: "iPhone, iOS 17 and up (widgets target iOS 18)" },
     {
       label: "Stack",
@@ -26,16 +26,17 @@ export const commit = {
     },
     {
       label: "Size",
-      value: "About 8,400 lines of Swift, with 174 package tests and 33 UI tests",
+      value: "About 12,400 lines of Swift, with 254 package tests and 58 UI tests",
     },
     { label: "Source", value: "Private repository" },
   ],
 
   overview: [
     "Commit is a personal accountability app. Instead of letting an overdue task slide quietly to tomorrow, it has a MUST DO category for the things I said I would do. A MUST DO is pinned at the top, and if I miss it, it stays there in red with the number of days overdue until I do it or honestly drop it.",
-    "Everything else is a normal to-do organized by date: a Today screen, an Upcoming screen that works as a list or a calendar showing my phone's events alongside my tasks, repeating tasks, Home Screen and lock screen widgets, daily reminders, and a Review tab that shows how often I actually kept my word.",
+    "Everything else is a normal to-do organized by date: a Today screen with collapsible sections, an Upcoming screen that works as a list or a calendar showing my phone's events alongside my tasks, repeating tasks, Home Screen and lock screen widgets, and daily reminders.",
+    "On top of that sit growth habits (gym, reading) that are tracked with no penalty, and an XP and level system that rewards follow-through. A dragon drawn from SwiftUI shapes evolves as I level up, and a Review tab shows my level, my streak, and how I did on MUST DOs, ordinary tasks and habits, with a ledger giving the reason for every XP gain and loss.",
     "There is no backend and no account. It is SwiftUI and SwiftData on the phone, and the app and its widgets share one database through an App Group.",
-    "I wrote a plan with the locked decisions first, then built it in 11 phases. Each phase was its own branch, pull request and tag, with its tests passing before it merged. I built it with Claude Code, and the notes on this page come from those pull requests.",
+    "I wrote a plan with the locked decisions first, then built it in 19 phases. Each phase was its own branch and pull request, with its tests passing before it merged. I built it with Claude Code, and the notes on this page come from those pull requests.",
   ],
 
   gallery: {
@@ -44,13 +45,13 @@ export const commit = {
       "Real screens from the iOS simulator, in a known sample-data state. Swipe sideways to see them all.",
     variant: "phone",
     items: [
-      { src: today, alt: "The Today screen", caption: "Today: MUST DOs pinned at the top, then Overdue, then Today. Finished tasks stay put, crossed out, labeled early or late." },
+      { src: today, alt: "The Today screen", caption: "Today: my level and XP with the companion, MUST DOs pinned at the top, then Overdue and Today. Sections collapse, and finished tasks stay put, labeled early or late." },
       { src: form, alt: "The new task form", caption: "The task form: optional date, optional time, and the MUST DO toggle." },
       { src: upcoming, alt: "The Upcoming list", caption: "Upcoming as a list: the next seven days always show, so there's somewhere to drop a task." },
       { src: calendar, alt: "The Upcoming calendar", caption: "Upcoming as a calendar: a month grid, with my phone's calendar events and my tasks together." },
-      { src: repeating, alt: "The Repeating tab", caption: "Repeating tasks, with edit, pause and delete." },
+      { src: review, alt: "The Review screen", caption: "Review: my level, my streak, and how many MUST DOs were kept, late, missed or dropped, over 7 days, 30 days or all time." },
+      { src: companion, alt: "Five forms of the dragon companion", caption: "The companion: five forms of a dragon drawn entirely from SwiftUI shapes. It evolves as my level rises." },
       { src: settings, alt: "The Settings screen", caption: "Settings: reminder times, and the countdown for the free-account weekly renewal." },
-      { src: review, alt: "The Review screen", caption: "Review: streaks, and how many MUST DOs were kept, late, missed or dropped." },
       { src: widgetsHome, alt: "Home Screen widgets", caption: "Home Screen widgets: a count that turns red when overdue, and a list you can tap to complete." },
       { src: widgetsLock, alt: "Done states and lock screen widgets", caption: "The all-done states, and the lock screen widgets." },
     ],
@@ -63,11 +64,11 @@ export const commit = {
     items: [
       {
         title: "CommitCore: the rules",
-        body: "A local Swift package shared by the app and the widget. It holds the models (TaskItem, RecurrenceRule), the shared store, and the pure logic: section grouping, day stamps, the recurrence generator, the notification planner, the calendar day layout and backups.",
+        body: "A local Swift package shared by the app and the widget. It holds the models (TaskItem, RecurrenceRule, GrowthTask), the shared store, and the pure logic: section grouping, day stamps, the recurrence generator, the notification planner, the calendar day layout, the XP rules and level maths, and backups.",
       },
       {
         title: "The app: the screens",
-        body: "SwiftUI views for Today, Upcoming (list and calendar), Review, Repeating and Settings, plus a read-only EventKit bridge for calendar events. The views only draw what CommitCore decides.",
+        body: "SwiftUI views for Today, Upcoming (list and calendar), Review, Collection and Settings (where repeating tasks now live), plus a read-only EventKit bridge for calendar events. The views only draw what CommitCore decides.",
       },
       {
         title: "The widget: the glanceable part",
@@ -93,7 +94,7 @@ export const commit = {
     },
     {
       title: "Logic in a package, thin views",
-      body: "All the rules live in CommitCore with no UI, so they run under swift test in seconds with no simulator: 174 tests. The SwiftUI views just draw the results, and the widget reuses the same code.",
+      body: "All the rules live in CommitCore with no UI, so they run under swift test in seconds with no simulator: 254 tests. The SwiftUI views just draw the results, and the widget reuses the same code.",
     },
     {
       title: "Repeating tasks are real rows, generated ahead",
@@ -109,7 +110,7 @@ export const commit = {
     },
     {
       title: "Rebuild every reminder on every change",
-      body: "A notification's text is fixed when it is scheduled, so a pure, tested planner rebuilds all pending reminders after every save, launch and return to the app, staying under iOS's limit of 64. The app-renewal reminder is based on the install date, because the first version reset it on every launch and would never have fired for someone who opens the app daily.",
+      body: "A notification's text is fixed when it is scheduled, so a pure, tested planner rebuilds all pending reminders after every save, launch and return to the app, staying under iOS's limit of 64. The app-renewal reminder started as the install date plus 7 days, which turned out to be wrong, because re-running from Xcode doesn't renew a free-account build while its signing profile is still valid. The app now reads the real expiry from its embedded provisioning profile, and a script renews it in one command.",
     },
     {
       title: "ScrollView, not List",
@@ -122,6 +123,22 @@ export const commit = {
     {
       title: "Every screen can be launched in a known state",
       body: "Debug launch arguments (seed sample data, start on a tab, open the calendar with sample events, preview the widgets, start empty) put the app in any state without tapping. They power the UI tests, and they are how the screenshots on this page were captured.",
+    },
+    {
+      title: "XP is derived, never stored",
+      body: "XP and levels are recalculated from the records every time, so changing the rules re-scores history and nothing can drift out of sync. Dropped and deleted tasks count for nothing, growth never costs XP, and levels never go down.",
+    },
+    {
+      title: "Strict for promises, gentle for habits",
+      body: "A missed MUST DO or an ordinary task that sits overdue can cost XP, but a growth habit never does: no due date, no red, just 5 XP for each day done and a quiet \"4 of 7\". Two kinds of commitment get two kinds of feedback.",
+    },
+    {
+      title: "A companion drawn from code",
+      body: "The first companion is a dragon drawn from SwiftUI shapes, so there are no image files and nothing to license. It grows a little every level, evolves at levels 4, 8, 15 and 25, and looks worried when the day's XP went negative. Optional animated creature art can replace it, but it is fetched by a script and never committed to the repo, with the dragon as the fallback so the app always works.",
+    },
+    {
+      title: "Only the choice is stored",
+      body: "The partner system has an egg picker with three seeded-random offers, and a Collection of finished creatures. The app stores only my pick. Which partner, which form and when the next egg arrives are all derived from my level, so there is nothing to get out of sync.",
     },
   ],
 
@@ -166,7 +183,6 @@ export const commit = {
           "Empty and all-done states (\"You finished everything. Good job.\").",
         ],
         tests: "32 package tests.",
-        shot: { src: today, alt: "The Today screen" },
       },
       {
         id: "p3",
@@ -207,9 +223,9 @@ export const commit = {
           "Editing a rule's schedule rebuilds its upcoming open tasks; editing only the title or notes updates them in place. Finished and past tasks are never touched.",
           "A repeat picker in the form, and a Repeating tab with edit, pause and delete.",
           "Seeded on first launch: a weekly MUST DO to renew the app, since a free Apple ID build expires after 7 days.",
+          "The Repeating tab later moved into Settings (Phase 12).",
         ],
         tests: "67 package tests and 13 UI tests.",
-        shot: { src: repeating, alt: "The Repeating tab" },
       },
       {
         id: "p6",
@@ -250,7 +266,6 @@ export const commit = {
           "A haptic on completing a task, a streak badge, and a new app icon in light, dark and tinted.",
         ],
         tests: "115 package tests and 22 UI tests.",
-        shot: { src: review, alt: "The Review screen" },
       },
       {
         id: "fix",
@@ -304,6 +319,121 @@ export const commit = {
         ],
         tests: "174 package tests and 33 UI tests.",
       },
+      {
+        id: "p11",
+        label: "Phase 11",
+        title: "Mark a task done on an earlier day",
+        summary: "For things I finished but forgot to tick off, so they don't sit overdue.",
+        points: [
+          "Swipe right on a task in Today and \"Done earlier\" opens a day picker, with yesterday preselected and only days from when the task was created or due, up to today. The edit form has the same option.",
+          "The task counts as done on that day: it leaves Overdue and MUST DO, shows as late or on time correctly, and Review sees the right day. The day doesn't move with the time zone.",
+          "The option is hidden when there is no earlier day.",
+        ],
+        tests: "188 package tests and 36 UI tests.",
+      },
+      {
+        id: "p12",
+        label: "Phase 12",
+        title: "Collapsible sections, and Repeating moves into Settings",
+        summary: "A calmer Today, and fewer tabs.",
+        points: [
+          "Overdue, Today and Ahead of schedule collapse, with a header that shows how many are hidden, remembered between launches. MUST DO is always pinned and never collapses, and collapsed sections still accept drops.",
+          "The Repeating tab is gone; repeating tasks are managed under Settings.",
+          "A roadmap document records the next phases and the XP rules I agreed with myself.",
+        ],
+        tests: "188 package tests and 38 UI tests.",
+      },
+      {
+        id: "p13",
+        label: "Phase 13",
+        title: "Growth tasks",
+        summary: "Recurring things I do to grow (gym, reading, meditating, journaling), with no penalty for skipping.",
+        points: [
+          "Two new models, a growth task and a check-in for each task per day, stored as a time-zone-proof day. They are additive, so existing data migrates untouched.",
+          "A collapsible Growth section on Today: today's check circle, the previous six days tappable to mark a forgotten day (up to 30 days back), a gentle \"4 of 7\" count, and no red anywhere.",
+          "\"Stop tracking\" hides a task but keeps its history. Backups include growth, and older backups still load.",
+        ],
+        tests: "201 package tests and 44 UI tests.",
+      },
+      {
+        id: "p14",
+        label: "Phase 14",
+        title: "XP and levels",
+        summary: "An XP engine derived from the records every time, with nothing stored.",
+        points: [
+          "Earning: a task is 10 XP, a MUST DO on its day is 25 (late is 10), a growth day is 5.",
+          "Losing: a MUST DO left open past its day costs 15, then 5 a day for up to 3 more days; an ordinary task costs 5 once after 3 days overdue; growth never costs.",
+          "Dropped and deleted tasks count for nothing, and \"Done earlier\" counts on the day it was really done.",
+          "Level 1 needs 100 XP and each level needs 20 more. Levels never go down: XP can dip, but not below where the level started.",
+          "Today shows my level, a progress bar and the day's net.",
+        ],
+        tests: "218 package tests and 47 UI tests.",
+        shot: { src: today, alt: "The Today screen with the level and XP bar" },
+      },
+      {
+        id: "p15",
+        label: "Phase 15",
+        title: "Review overhaul",
+        summary: "Review now covers everything I do, not just MUST DOs.",
+        points: [
+          "Overview: a level card, the streak, MUST DOs, a new Tasks card (done, early, late, overdue now) and a new Growth card (days done out of days possible, fair to new habits), all driven by one 7 days, 30 days or all time picker.",
+          "History shows finished tasks and growth days together by day, with the XP each earned and the day's net.",
+          "A new XP page: a 14-day chart and a ledger with the reason for every gain and loss, plus the rules in plain words.",
+        ],
+        tests: "229 package tests and 50 UI tests.",
+        shot: { src: review, alt: "The Review screen" },
+      },
+      {
+        id: "p16",
+        label: "Phase 16",
+        title: "A companion that grows with my level",
+        summary: "A creature that visibly keeps up with my progress.",
+        points: [
+          "A dragon drawn from SwiftUI shapes, so there are no image files and nothing to license. It grows a little every level and evolves at levels 1, 4, 8, 15 and 25: Hatchling, Whelp, Drake, Dragon and Elder Dragon, gaining wings, horns, a crest, armour plates, glowing eyes, an aura and finally a crown.",
+          "Its mood follows today's XP: happy when I've gained, worried when I've lost.",
+          "It sits beside the XP bar on Today (tap it to see every form, with locked ones as silhouettes) and on the Review level card.",
+          "Reaching a level shows a celebration once, and evolving gets a bigger one. The evolution levels live in one place, so they are easy to tune.",
+        ],
+        tests: "235 package tests and 53 UI tests.",
+        shot: { src: companion, alt: "Five forms of the dragon companion" },
+      },
+      {
+        id: "p17",
+        label: "Phase 17",
+        title: "Collectible partners and an egg picker",
+        summary: "One partner at a time evolves as I level up, and a new egg arrives after each.",
+        points: [
+          "A partner evolves along its line as I level (three-form lines at partner-levels 1, 3 and 5; two-form lines at 1 and 4). After 8 levels it joins the Collection and a new egg arrives.",
+          "The egg picker offers three eggs with seeded-random offers. I tap each to look inside, then confirm one. \"Later\" puts it off, and a catch-up egg appears first if I skipped earlier ones.",
+          "Only my choice is stored (backups include it; older backups still load). Everything else is derived from my level.",
+          "The creature art is fetched by a script and never committed to the repository. The drawn dragon stays as the fallback, so the app always works.",
+        ],
+        tests: "246 package tests and 55 UI tests. One simulator notification-permission test also fails on main, so it is unrelated.",
+      },
+      {
+        id: "p18",
+        label: "Phase 18",
+        title: "The Collection tab",
+        summary: "An inventory of the creatures I have raised.",
+        points: [
+          "A new tab: the partner I'm raising (or an unchosen egg, which opens the picker) sits top left, highlighted grey, and finished creatures follow, newest first, in their final form.",
+          "Tapping one shows a short overview: its evolution line, the levels raised, the date I chose it, and what I passed over.",
+          "It is an inventory, not a catalogue: nothing I don't own is shown.",
+        ],
+        tests: "251 package tests and 58 UI tests.",
+      },
+      {
+        id: "later",
+        label: "Afterwards",
+        title: "Fixes and tooling",
+        summary: "Small things found by using the app every day.",
+        points: [
+          "The growth rows now name every day and show the date range (\"Last 7 days: Nov 7 – 13\"), because on one day Friday looked missing.",
+          "The app reads its real expiry from the signing profile, so the renewal reminder fires the evening before the real expiry.",
+          "A script renews a free-account build in one command: it finds the phone, clears the cached signing profiles, builds, installs over the existing app (keeping its data), opens it and prints the new expiry.",
+        ],
+        tests: "254 package tests.",
+      },
     ],
   },
 
@@ -312,7 +442,7 @@ export const commit = {
     items: [
       "Writing tasks into the Google or iOS calendar. I deliberately deferred it, so calendar events are read-only for now.",
       "Real-device checks: widgets on an actual Home Screen and live Google Calendar syncing can't be verified by the automated tests, so they have to be checked on a phone.",
-      "Distribution: it is signed with a free Apple ID, so it needs re-running from Xcode weekly, which is why the app reminds me.",
+      "Distribution: it is signed with a free Apple ID, so it needs renewing every week. One script now does it in a single command, and the app reminds me the evening before it expires.",
     ],
   },
 };

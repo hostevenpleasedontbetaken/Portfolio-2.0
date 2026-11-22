@@ -30,7 +30,7 @@ export const projects = [
     name: "Commit",
     meta: "Native iOS app · Solo developer · 2026",
     image: commitImage,
-    desc: "A native iPhone task app with an interactive home-screen widget, local notifications, and calendar integration, across 8,000+ lines of Swift.",
+    desc: "A native iPhone accountability app: tasks that can't quietly slide, habits, XP and levels with a growing companion, widgets, reminders and calendar integration, across 12,000+ lines of Swift.",
     techStack: ["Swift", "SwiftUI", "SwiftData", "WidgetKit", "EventKit"],
   },
   {
