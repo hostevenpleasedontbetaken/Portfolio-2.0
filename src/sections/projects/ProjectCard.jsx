@@ -1,5 +1,4 @@
 import Tag from "../../components/ui/Tag";
-import TiltCard from "../../components/ui/TiltCard";
 import { useBrowserNavContext } from "../../hooks/useBrowserNavContext";
 
 const isPlainClick = (event) =>
@@ -12,7 +11,7 @@ const ProjectCard = ({ project }) => {
   const nav = useBrowserNavContext();
 
   return (
-    <TiltCard className="flex h-full flex-col gap-3 rounded-[0.8rem] bg-dark-4 p-5 text-white">
+    <div className="flex h-full flex-col gap-3 rounded-[0.8rem] border border-transparent bg-dark-4 p-5 text-white transition-colors duration-200 hover:border-main-1/40">
       {project.image ? (
         <img
           src={project.image}
@@ -66,7 +65,7 @@ const ProjectCard = ({ project }) => {
           </a>
         ))}
       </div>
-    </TiltCard>
+    </div>
   );
 };
 

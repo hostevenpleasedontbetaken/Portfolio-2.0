@@ -45,7 +45,7 @@ src/
     browser/              the browser window: BrowserFrame (scroll area),
                           BrowserChrome = TabBar + Toolbar (address bar) +
                           BookmarksBar on desktop, MobileToolbar on phones
-    ui/                   shared pieces: Section, Reveal, TiltCard, Tag,
+    ui/                   shared pieces: Section, Reveal, Tag,
                           Typewriter, icons
   sections/               one folder per page section, each a single
     hero/ skills/         responsive component (no separate mobile versions)
