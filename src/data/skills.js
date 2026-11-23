@@ -86,18 +86,18 @@ export const skills = [
       "Python",
       "Flask",
       "SQLAlchemy",
+      "pytest",
+      "Authentication & Access Control",
     ],
   },
   {
-    id: "data-security",
-    title: "Data, Security & ML",
+    id: "data-ml",
+    title: "Data & ML",
     items: [
       "Anomaly Detection",
       "scikit-learn",
       "pandas",
       "Log Analysis",
-      "Authentication & Access Control",
-      "pytest",
     ],
   },
   {
