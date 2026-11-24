@@ -35,7 +35,7 @@ const BrowserFrame = ({ children }) => {
               tops land just below it. */}
           <div
             ref={scrollRef}
-            className="border border-dark-1 rounded-t-2xl relative bg-radial-gradient-white-weak h-full w-full overflow-y-auto scroll-pt-12 md:scroll-pt-28 scrollbar-thin scrollbar-webkit"
+            className="border border-dark-1 rounded-t-2xl relative bg-radial-gradient-white-weak h-full w-full overflow-y-auto scroll-pt-12 md:scroll-pt-28 wide-short:scroll-pt-[5.4rem] scrollbar-thin scrollbar-webkit"
           >
             <div className="sticky top-0 z-20">
               <BrowserChrome nav={nav} />

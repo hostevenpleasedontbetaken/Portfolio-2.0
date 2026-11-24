@@ -5,6 +5,11 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        // Landscape phones: wide enough for the desktop chrome but too short to
+        // spare the bookmarks bar.
+        "wide-short": { raw: "(min-width: 768px) and (max-height: 500px)" },
+      },
       animation: {
         cursor: "blink 1s steps(2, start) infinite",
         "loop-scroll": "loop-scroll 80s linear infinite",
