@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { navigation, projects } from "../../data";
 import { CloseIcon, PathIcon } from "../ui/icons";
 
@@ -44,6 +45,21 @@ const TabBar = ({ nav }) => {
   ];
   const activeIndex = tabs.findIndex((tab) => tab.key === nav.activeTab);
 
+  // With many project tabs open the strip scrolls sideways (tabs keep a
+  // readable minimum width) and the active tab is kept in view.
+  const stripRef = useRef(null);
+  useEffect(() => {
+    const strip = stripRef.current;
+    const active = strip?.querySelector('[aria-current="page"]');
+    if (!strip || !active) return;
+    const tab = active.parentElement;
+    const left = tab.offsetLeft;
+    const right = left + tab.offsetWidth;
+    if (left < strip.scrollLeft) strip.scrollTo({ left: left - 8, behavior: "smooth" });
+    else if (right > strip.scrollLeft + strip.clientWidth)
+      strip.scrollTo({ left: right - strip.clientWidth + 8, behavior: "smooth" });
+  }, [nav.activeTab, tabs.length]);
+
   return (
     <div className="flex h-11 items-end rounded-t-xl bg-dark-3 px-3">
       <div className="flex items-center gap-x-2 self-center pr-4" aria-hidden="true">
@@ -54,7 +70,11 @@ const TabBar = ({ nav }) => {
         ))}
       </div>
 
-      <nav aria-label="Tabs" className="flex h-9 min-w-0 flex-1 items-center">
+      <nav
+        ref={stripRef}
+        aria-label="Tabs"
+        className="relative flex h-9 min-w-0 flex-1 items-center overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
         {tabs.map((tab, index) => {
           const isActive = index === activeIndex;
           // No separator next to the active tab, like Chrome.
@@ -63,7 +83,7 @@ const TabBar = ({ nav }) => {
           return (
             <div
               key={tab.key}
-              className={`relative flex h-full min-w-0 max-w-[16rem] flex-1 items-center ${
+              className={`relative flex h-full min-w-[7.5rem] max-w-[16rem] flex-1 items-center ${
                 isActive ? "mx-2" : ""
               }`}
             >
@@ -81,7 +101,7 @@ const TabBar = ({ nav }) => {
                   event.preventDefault();
                   tab.open();
                 }}
-                className={`relative flex min-w-0 flex-1 items-center gap-x-2 pl-3 text-sm transition-colors duration-150 ${
+                className={`relative flex min-w-0 flex-1 items-center gap-x-2 pl-3 text-sm transition-colors duration-150 focus-visible:outline-offset-[-2px] ${
                   tab.close ? "pr-8" : "pr-3"
                 } ${isActive ? activeTab : inactiveTab}`}
               >

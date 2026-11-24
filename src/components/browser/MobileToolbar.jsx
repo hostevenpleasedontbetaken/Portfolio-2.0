@@ -15,6 +15,7 @@ const iconButton =
 const MobileToolbar = ({ nav }) => {
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef(null);
+  const menuButtonRef = useRef(null);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -23,7 +24,10 @@ const MobileToolbar = ({ nav }) => {
       if (!rootRef.current?.contains(event.target)) setIsOpen(false);
     };
     const closeOnEscape = (event) => {
-      if (event.key === "Escape") setIsOpen(false);
+      if (event.key !== "Escape") return;
+      setIsOpen(false);
+      // Hand focus back to the button that opened the menu.
+      menuButtonRef.current?.focus();
     };
 
     document.addEventListener("pointerdown", closeOnOutsideClick);
@@ -64,6 +68,7 @@ const MobileToolbar = ({ nav }) => {
       </button>
 
       <button
+        ref={menuButtonRef}
         type="button"
         aria-label={isOpen ? "Close menu" : "Open menu"}
         aria-expanded={isOpen}
